@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>欢迎来到super king的博客</title>
+  <title>Java练习-家庭收支 | 欢迎来到super king的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="长远的生活需要清醒">
-<meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到super king的博客">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="家庭收支程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java练习-家庭收支">
+<meta property="og:url" content="http://yoursite.com/2020/04/05/Java%E7%BB%83%E4%B9%A0-%E5%AE%B6%E5%BA%AD%E6%94%B6%E6%94%AF/index.html">
 <meta property="og:site_name" content="欢迎来到super king的博客">
-<meta property="og:description" content="长远的生活需要清醒">
+<meta property="og:description" content="家庭收支程序">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-05T07:18:35.000Z">
+<meta property="article:modified_time" content="2020-04-05T07:52:13.239Z">
 <meta property="article:author" content="可乐不可乐呀。">
+<meta property="article:tag" content="家庭收支">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到super king的博客" type="application/atom+xml">
@@ -217,55 +220,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-我的第二篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java练习-家庭收支" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第二篇博客</a>
+    <h1 class="article-title" itemprop="name">
+      Java练习-家庭收支
     </h1>
   
 
         
-        <a href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-03-22T05:53:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
+        <a href="/2020/04/05/Java%E7%BB%83%E4%B9%A0-%E5%AE%B6%E5%BA%AD%E6%94%B6%E6%94%AF/" class="archive-article-date">
+  	<time datetime="2020-04-05T07:18:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
 </a>
         <!--显示阅读次数-->
           
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+           <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+
 <!--显示阅读次数完毕-->
         
       </header>
     
     <div align="center" class="post-count">
-      字数：0字 | 预计阅读时长：1分钟
+      字数：533字 | 预计阅读时长：2分钟
    </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="家庭收支程序"><a href="#家庭收支程序" class="headerlink" title="家庭收支程序"></a>家庭收支程序</h1><a id="more"></a>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">public</span> <span class="keyword">class</span> Familyaccount &#123;</span><br><span class="line">    <span class="built_in">public</span> static <span class="type">void</span> main(String[] args)&#123;</span><br><span class="line">        <span class="type">boolean</span> isfalg = <span class="keyword">true</span>;</span><br><span class="line">        <span class="type">int</span> Account = <span class="number">10000</span>;</span><br><span class="line">        String SZ = "收支\t账户金额\t收支金额\t说    明\n";</span><br><span class="line">        <span class="keyword">while</span>(isfalg)&#123;</span><br><span class="line">            //界面</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.println("--------------收支系统------------");</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.println("           1. 添加收入：");</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.println("           2. 添加支出：");</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.println("           3. 账户查询：");</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.println("           4. 退   出");</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.print("           请输入您的操作(1-4)：");</span><br><span class="line">            //获取类，从键盘输入选择功能</span><br><span class="line">            <span class="type">char</span> number= Utility.readMenuSelection();</span><br><span class="line">            //功能实现</span><br><span class="line">            switch (number)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'1'</span>:</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("--------------登记收入------------");</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.print("添加收入:");</span><br><span class="line">                    <span class="type">int</span> makemoney = Utility.readNumber();</span><br><span class="line">                    Account+=makemoney;</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.print("收入说明：");</span><br><span class="line">                    String readSR =Utility.readString();</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("当前账户余额:"+Account);</span><br><span class="line">                    SZ = SZ+"收入：\t"+Account+"\t\t"+makemoney+"\t\t\t"+readSR+"\n";</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("--------------登记完成------------");</span><br><span class="line"></span><br><span class="line">                    break;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'2'</span>:</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("--------------登记支出------------");</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.print("添加支出:");</span><br><span class="line">                    <span class="type">int</span> paymoney = Utility.readNumber();</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.print("收入说明：");</span><br><span class="line">                    String readZC =Utility.readString();</span><br><span class="line">                    Account -=paymoney;</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("当前账户余额:"+Account);</span><br><span class="line">                    SZ = SZ+"收入：\t"+Account+"\t\t"+paymoney+"\t\t\t"+readZC+"\n";</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("--------------登记完成------------");</span><br><span class="line">                    break;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'3'</span>:</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("--------------账户明细------------");</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println(SZ);</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("----------------完成-------------");</span><br><span class="line">                    break;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'4'</span>:</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.println("--------------退出------------");</span><br><span class="line">                    <span class="keyword">System</span>.<span class="keyword">out</span>.print("确定要退出吗?(Y/N)");</span><br><span class="line">                    <span class="type">char</span> TC = Utility.readConfirmSelection();</span><br><span class="line">                    <span class="keyword">if</span> (TC == <span class="string">'Y'</span>)&#123;</span><br><span class="line">                        isfalg = <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Source code recreated from a .class file by IntelliJ IDEA</span></span><br><span class="line"><span class="comment">// (powered by Fernflower decompiler)</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Utility</span> &#123;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Scanner scanner;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Utility</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">readMenuSelection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">String</span> var1 = readKeyBoard(<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">char</span> var0 = var1.charAt(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">if</span>(var0 == <span class="number">49</span> || var0 == <span class="number">50</span> || var0 == <span class="number">51</span> || var0 == <span class="number">52</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> var0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            System.out.<span class="built_in">print</span>(<span class="string">"选择错误，请重新输入："</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">readNumber</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">String</span> var1 = readKeyBoard(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> var0 = Integer.<span class="built_in">parseInt</span>(var1);</span><br><span class="line">                <span class="keyword">return</span> var0;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (NumberFormatException var3) &#123;</span><br><span class="line">                System.out.<span class="built_in">print</span>(<span class="string">"数字输入错误，请重新输入："</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> <span class="title">readString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">String</span> var0 = readKeyBoard(<span class="number">8</span>);</span><br><span class="line">        <span class="keyword">return</span> var0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">readConfirmSelection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">String</span> var1 = readKeyBoard(<span class="number">1</span>).toUpperCase();</span><br><span class="line">            <span class="keyword">char</span> var0 = var1.charAt(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">if</span>(var0 == <span class="string">'Y'</span> || var0 == <span class="string">'N'</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> var0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            System.out.<span class="built_in">print</span>(<span class="string">"选择错误，请重新输入："</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">String</span> <span class="title">readKeyBoard</span><span class="params">(<span class="keyword">int</span> var0)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">String</span> var1 = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(scanner.hasNext()) &#123;</span><br><span class="line">            var1 = scanner.nextLine();</span><br><span class="line">            <span class="keyword">if</span>(var1.length() &gt;= <span class="number">1</span> &amp;&amp; var1.length() &lt;= var0) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            System.out.<span class="built_in">print</span>(<span class="string">"输入长度（不大于"</span> + var0 + <span class="string">"）错误，请重新输入："</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> var1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/sxzf.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">家庭收支</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/05/Java%E7%BB%83%E4%B9%A0-%E5%AE%B6%E5%BA%AD%E6%94%B6%E6%94%AF/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/01/java%E5%9F%BA%E7%A1%80-%E5%BE%AA%E7%8E%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java基础-循环语句</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -280,88 +392,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/">我的第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/" class="archive-article-date">
-  	<time datetime="2020-03-21T15:43:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-21</time>
-</a>
-        <!--显示阅读次数-->
-          
-<!--显示阅读次数完毕-->
-        
-      </header>
-    
-    <div align="center" class="post-count">
-      字数：2k字 | 预计阅读时长：9分钟
-   </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="2019年3月21"><a href="#2019年3月21" class="headerlink" title="2019年3月21"></a>2019年3月21</h1><p><img src="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/thumb-1920-280633.jpg" alt="晚安"></p>
-        
-          <a class="article-more-a" href="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#家庭收支程序"><span class="toc-number">1.</span> <span class="toc-text">家庭收支程序</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+
   
 
 
@@ -387,8 +443,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
