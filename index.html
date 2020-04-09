@@ -245,54 +245,10 @@
    </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="一、面向对象的三条主线"><a href="#一、面向对象的三条主线" class="headerlink" title="一、面向对象的三条主线"></a>一、面向对象的三条主线</h2><ol>
-<li><p>Java 类及成员：属性、方法、构造器；代码块、内部块</p>
-</li>
-<li><p>面向对象的三大特征：封装性、继承性、多态性（抽象性）</p>
-</li>
-<li><p>其他关键字：this、super、static、final、interface、package、import等</p>
-<h2 id="二、面向对象的两个要素"><a href="#二、面向对象的两个要素" class="headerlink" title="二、面向对象的两个要素"></a>二、面向对象的两个要素</h2><ul>
-<li>类：对一类事实的描述，是抽象的、概念上的定义</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>对象：是实际存在的该类事物的每个个体，因而也被称为实例。（instance）<blockquote>
-<p>面向对象程序的重点是类的设计<br>设计类，就是设计类的成员      </p>
-</blockquote>
-</li>
-<li>成员：Field=属性 成员变量，Method=（成员）方法=函数   </li>
-<li>创建类的对象 = 类的实体化 = 实例化类<h2 id="三、类和对象的使用（面向对象思想落地的实现）"><a href="#三、类和对象的使用（面向对象思想落地的实现）" class="headerlink" title="三、类和对象的使用（面向对象思想落地的实现）"></a>三、类和对象的使用（面向对象思想落地的实现）</h2></li>
-</ul>
-<ol>
-<li>创建类，设计类的成员<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 创建类，设计类的成员</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>&#123;</span></span><br><span class="line">	<span class="comment">//属性</span></span><br><span class="line">	<span class="keyword">String</span> name;</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">boolean</span> isMale;</span><br><span class="line">	<span class="comment">//方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"人可以吃饭"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"人可以睡觉"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">takle</span><span class="params">(<span class="keyword">String</span> language)</span></span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"人可以交流，使用的是："</span>+language);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>创建类的成员<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2. 创建类的成员</span></span><br><span class="line">	Person p1 = <span class="keyword">new</span> <span class="type">Person</span>();</span><br></pre></td></tr></table></figure></li>
-<li>通过“对象.属性”或“对象.方法”调用对象的结构<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//3. 通过“对象.属性”或“对象.方法”调用对象的结构</span><br><span class="line">	p1.name=<span class="string">"Tom"</span>;</span><br><span class="line">	System.out.println(p1.age);</span><br><span class="line">	p1.isMale=true;</span><br><span class="line">	p1.eat();</span><br><span class="line">	p1.sleep();</span><br><span class="line">	p1.takle(<span class="string">"Chinaese"</span>);</span><br><span class="line">	//*************************</span><br><span class="line">	//类似Array2 = Array1，将p1变量保存的对象地址值赋给p3，导致p1和p3指向了堆空间同一个对象实体。</span><br><span class="line">	Person p2 = p1;</span><br><span class="line">	System.out.println(p2.name);//Tom</span><br><span class="line">	p2.age = 10;</span><br><span class="line">	System.out.println(p1.age);//10</span><br></pre></td></tr></table></figure>
-<h2 id="四、-如果创建了一个类的多个对象，则每个对象都独立的拥有一套类的属性。（非static）"><a href="#四、-如果创建了一个类的多个对象，则每个对象都独立的拥有一套类的属性。（非static）" class="headerlink" title="四、 如果创建了一个类的多个对象，则每个对象都独立的拥有一套类的属性。（非static）"></a>四、 如果创建了一个类的多个对象，则每个对象都独立的拥有一套类的属性。（非static）</h2>意味着：如果我们修改了一个对象的属性a，则不影响另一个对象属性a的值。<h2 id="五、-对象在内存中的解析"><a href="#五、-对象在内存中的解析" class="headerlink" title="五、 对象在内存中的解析"></a>五、 对象在内存中的解析</h2><img src="/2020/04/08/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E4%B8%8A/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E8%A7%A3%E6%9E%90.png" alt="对象的内存解析"><br><img src="/2020/04/08/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E4%B8%8A/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90.png" alt="对象的内存代码解析">   <h1 id="类中-属性的使用"><a href="#类中-属性的使用" class="headerlink" title="类中 属性的使用"></a>类中 属性的使用</h1></li>
-</ol>
-<p><strong>属性（成员变量）VS 局部变量</strong></p>
-<ol>
-<li><p>相同点  </p>
-<ol>
-<li>定义变量的格式：数据类型 变量名= 变量值</li>
-<li>先声明，后使用</li>
-<li>变量都有其对应的作用域</li>
-</ol>
-</li>
-<li><p>不同点<br> <strong>2.1 在类中声明的位置不同</strong><br> <strong>属性</strong>：直接定义在类中的一对{}中<br> <strong>局部变量</strong>：声明在方法内，方法形参、代码块内、构造器形参、构造器内部的变量。  </p>
-<p> <strong>2.2 关于权限修饰符的不同</strong><br> <strong>属性</strong>：可以在声明属性时，指明其权限，使用权限修饰符<br> 常用的权限修饰符：private、public、缺省、protected —-&gt;封装性<br> <strong>局部变量</strong>：不可以使用权限修饰符</p>
-<p> <strong>2.3 默认初始化值的情况</strong><br>  <strong>属性：</strong>   类的属性，根据其类型，都有默认初始化值</p>
-<pre><code>整型：0    
-  浮点型0.0   
-   字符型：&apos;0&apos;或者&apos;\u0000&apos;    
-   布尔型：false    
-   引用数据类型（类、数组、接):null    </code></pre><p>  <strong>局部变量：</strong><br>  没有默认初始化值</p>
-<pre><code> 意味着，调用局部变量时，一定要有显式赋值
-特别的：形参在我们调用时赋值即可    </code></pre><p> <strong>2.4  在内存中加载的位置</strong>   </p>
-<pre><code>属性：加载到堆空间（非static）  
-局部变量加载到栈空间   </code></pre><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span>&#123;</span></span><br><span class="line">	<span class="comment">// 属性（成员变量）</span></span><br><span class="line">	<span class="keyword">String</span> name;</span><br><span class="line">	<span class="keyword">int</span> age = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">boolean</span> isMale;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">(<span class="keyword">String</span> language)</span></span>&#123;<span class="comment">//language  : 形参，也是局部变量</span></span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"我们使用"</span>+language+<span class="string">"进行交流"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">String</span> food = <span class="string">"馒头"</span>;<span class="comment">//局部变量</span></span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"人可以吃"</span>+food);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
+        <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1>
+        
+          <a class="article-more-a" href="/2020/04/08/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E4%B8%8A/#more">more >></a>
+        
       
 
       
@@ -1247,22 +1203,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java变量</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">运算符</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">关键字</a>
               </li>
              
@@ -1279,15 +1219,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color5">家庭收支</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">if-else</a>
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">switch-case</a>
+                <a href="javascript:void(0)" class="js-tag color4">运算符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Scanner</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">键盘输入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1311,7 +1263,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入坑</a>
+                <a href="javascript:void(0)" class="js-tag color3">if-else</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">switch-case</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java变量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1320,18 +1288,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">do while循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Scanner</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">键盘输入</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">家庭收支</a>
               </li>
             
             <div class="clearfix"></div>
