@@ -16,7 +16,7 @@
 <meta property="og:description" content="Java面向对象(中篇)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-11T14:32:14.000Z">
-<meta property="article:modified_time" content="2020-04-15T15:44:54.372Z">
+<meta property="article:modified_time" content="2020-04-18T16:38:29.532Z">
 <meta property="article:author" content="可乐不可乐呀。">
 <meta property="article:tag" content="封装性">
 <meta property="article:tag" content="继承性">
@@ -26,6 +26,10 @@
 <meta property="article:tag" content="super关键字">
 <meta property="article:tag" content="import关键字">
 <meta property="article:tag" content="方法的重写">
+<meta property="article:tag" content="向下转型">
+<meta property="article:tag" content="instanceof">
+<meta property="article:tag" content="equals()">
+<meta property="article:tag" content="toString()">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到super king的博客" type="application/atom+xml">
@@ -94,7 +98,7 @@
             
 		</nav>
 		<nav>
-			总字数 <span class="post-count">20.8k</span>
+			总字数 <span class="post-count">22.2k</span>
 		</nav>
 		<nav>
 			总文章数 15
@@ -257,7 +261,7 @@
       </header>
     
     <div align="center" class="post-count">
-      字数：3k字 | 预计阅读时长：10分钟
+      字数：4.4k字 | 预计阅读时长：16分钟
    </div>
     <div class="article-entry" itemprop="articleBody">
       
@@ -385,6 +389,72 @@
 <hr>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package com.atlizy.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimalTest</span> &#123;</span></span><br><span class="line">	<span class="comment">// 多态性的使用举例一：</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">		AnimalTest a = <span class="keyword">new</span> AnimalTest();</span><br><span class="line">		a.test(<span class="keyword">new</span> Dog());</span><br><span class="line">		a.test(<span class="keyword">new</span> Cat());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(Animal animal)</span></span>&#123;</span><br><span class="line">		animal.eat();</span><br><span class="line">		animal.shout();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> &#123;</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"动物：吃东西"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"动物：叫"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="title">extends</span> <span class="title">Animal</span> &#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"狗：吃骨头"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"狗：汪！汪！汪！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="title">extends</span> <span class="title">Animal</span> &#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"猫：吃鱼"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"猫：喵！喵！喵！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
+<h3 id="向下转型的几个常见问题"><a href="#向下转型的几个常见问题" class="headerlink" title="向下转型的几个常见问题"></a>向下转型的几个常见问题</h3><ul>
+<li>多态的使用：当前父类同名的参数的方法时，实际执行的是子类重写父类的方法–虚拟方法调用</li>
+<li>不能调用子类中特有的方法、属性：  编译时 实例是左边的类型</li>
+<li>有了对象的多态性以后，内存实际上加载了子类特有的属性和方法的，但是由于声明变量为父类类型<br>导致编译时，只能调用父类中声明的属性和方法。子类中特有的方法和属性不能调用。</li>
+<li>如何才能调用子类特有的属性和方法？<br>  向下转型    使用强制类型转换<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Animal</span> <span class="built_in">a1</span> = new Dog()<span class="comment">;</span></span><br><span class="line"><span class="symbol">Dog</span> <span class="built_in">d1</span> = (Dog)<span class="built_in">a1</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+但是强制转换可能会出现错误，如何避免错误呢？</li>
+</ul>
+<hr>
+<h3 id="instanceof的使用"><a href="#instanceof的使用" class="headerlink" title="instanceof的使用"></a>instanceof的使用</h3><ul>
+<li>使用强转时，可能出现ClassCastException的异常<br>为了避免出现这种异常，我们常常使用instanceof的关键字</li>
+<li>a  instanceof A:判断对象a是否是类A的实例，如果是，返回true，如果不是则返回false</li>
+<li>如果 a  instanceof A 是true，那么a  instanceof A的父类也是true；</li>
+<li>使用情景：为了避免向下转型出现ClassCastException异常，我们在向下转型之前，先进行instanceof<br>进行判断，一旦返回true，就进行向下转型，如果是false就不转型。</li>
+</ul>
+<hr>
+<h3 id="多态性练习"><a href="#多态性练习" class="headerlink" title="多态性练习"></a>多态性练习</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">10</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="keyword">this</span>.count);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sub</span> <span class="title">extends</span> <span class="title">Base</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">20</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="keyword">this</span>.count);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FIeldMethodTest</span> &#123;</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">	Sub s = <span class="keyword">new</span> Sub();</span><br><span class="line">		System.out.<span class="built_in">println</span>(s.count);<span class="comment">//20</span></span><br><span class="line">		s.<span class="built_in">display</span>();<span class="comment">//20</span></span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"*******"</span>);</span><br><span class="line">		Base b = <span class="keyword">new</span> Sub();</span><br><span class="line">		Base b1 = s;</span><br><span class="line">		System.out.<span class="built_in">println</span>(b1.count);<span class="comment">//10</span></span><br><span class="line">		System.out.<span class="built_in">println</span>(b1==s);<span class="comment">//true</span></span><br><span class="line">		b1.<span class="built_in">display</span>();<span class="comment">//20</span></span><br><span class="line">		b.<span class="built_in">display</span>();<span class="comment">//20</span></span><br><span class="line">		System.out.<span class="built_in">println</span>(b.count);<span class="comment">//10</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package com.atlizy.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">//考查多态的笔试题目：</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">IntervireTest1</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span> &#123;</span><br><span class="line">		Base1 <span class="keyword">base</span> = <span class="keyword">new</span> Sub1();</span><br><span class="line">		 <span class="keyword">base</span>.<span class="keyword">add</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);<span class="comment">//sub_1</span></span><br><span class="line"></span><br><span class="line">		Sub1 s = (Sub1) <span class="keyword">base</span>;</span><br><span class="line">		s.<span class="keyword">add</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);<span class="comment">//sub_2</span></span><br><span class="line">		Sub1 a = <span class="keyword">new</span> Sub1();</span><br><span class="line">		a.<span class="keyword">add</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);<span class="comment">//sub_2</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Base1</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span>(<span class="params"><span class="keyword">int</span> a, <span class="keyword">int</span>... arr</span>)</span> &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"base"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Sub1</span> <span class="title">extends</span> <span class="title">Base1</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span>(<span class="params"><span class="keyword">int</span> a, <span class="keyword">int</span>[] arr</span>)</span> &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"sub_1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span>(<span class="params"><span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c</span>)</span> &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"sub_2"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Object类的剖析"><a href="#Object类的剖析" class="headerlink" title="Object类的剖析"></a>Object类的剖析</h2><h3 id="和equals-的使用区别"><a href="#和equals-的使用区别" class="headerlink" title="==和equals()的使用区别"></a>==和equals()的使用区别</h3><p>通常我们用“==”来比较基本数据类型所存储的变量是否相等，而使用“==”比较引用数据类型时，则常常比较的是两个引用的地址是否一样，而String中提供了一种equals()方法，可以用来比较引用所存储的变量是否相等，所以我们可以在其他类种重写equals方法，从而实现两个引用种常量的比较</p>
+<ul>
+<li>==：运算符   </li>
+</ul>
+<ol>
+<li>可以在基本数据类型变量和引用数据类型变量中      </li>
+<li>如果比较的是基本数据类型变量，比较两个变量中的数据是否相等(类型不一定要相等)     </li>
+<li>如果比较的是引用数据类型，则比较的是地址值是否相等， 即比较两个引用是否是同一个实体。     </li>
+</ol>
+<ul>
+<li>equals()方法的使用    </li>
+</ul>
+<ol>
+<li>是一个方法，非运算符    </li>
+<li>之能适用于引用数据类型    </li>
+<li>object()中的equals()方法    <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+说明Object类中定义的equals()和==的作用是相同的，比较两个对象的地址值是否相同，即比较两个引用是否是同一个实体    </li>
+<li>像String、Data、File、包装类等都重写了Object类中的equals()方法，重写以后，是比较两个对象<br>实体内容是否相等。    </li>
+<li>通常情况下，我们自定义的类如果使用equals()方法对比实体内容是否相同，就需要对equals方法进行重写。</li>
+</ol>
+<ul>
+<li>练习使用<ul>
+<li>编写Order类，有int型的orderId，String型的orderName;</li>
+<li>相应的getter()和setter()方法，两个参数的构造器</li>
+<li>重写父类中的equals()方法，public boolean equals(Object obj)。</li>
+<li>并判断测试中创建的两个对象是否相等。  <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">equalstest</span> &#123;</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">	Order o1=<span class="keyword">new</span> Order(<span class="number">12</span>,<span class="string">"tom"</span>);</span><br><span class="line">	Order o2=<span class="keyword">new</span> Order(<span class="number">12</span>,<span class="string">"tom"</span>);</span><br><span class="line">	System.out.<span class="built_in">println</span>(o1.equals(o2));</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span> &#123;</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> orderId;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">String</span> orderName;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getOrderId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> orderId;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOrderId</span><span class="params">(<span class="keyword">int</span> orderId)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.orderId = orderId;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">String</span> <span class="title">getOrderName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> orderName;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOrderName</span><span class="params">(<span class="keyword">String</span> orderName)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.orderName = orderName;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Order</span><span class="params">(<span class="keyword">int</span> orderId, <span class="keyword">String</span> orderName)</span> </span>&#123;</span><br><span class="line">		super();</span><br><span class="line">		<span class="keyword">this</span>.orderId = orderId;</span><br><span class="line">		<span class="keyword">this</span>.orderName = orderName;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span> == obj) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (obj instanceof Order) &#123;</span><br><span class="line">			Order order = (Order) obj;</span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>.orderId == order.orderId</span><br><span class="line">					&amp;&amp; <span class="keyword">this</span>.orderName.equals(orderName)) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="toString-方法的使用"><a href="#toString-方法的使用" class="headerlink" title="toString()方法的使用"></a>toString()方法的使用</h3>Object中的toString()方法的使用</li>
+</ul>
+</li>
+<li>1.当我们输出一个对象的引用，实际上执行的就是调用当前对象的toString()</li>
+<li>2.Object类中的toString()的定义<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public String <span class="keyword">to</span><span class="constructor">String()</span> &#123;</span><br><span class="line">return get<span class="constructor">Class()</span>.get<span class="constructor">Name()</span> + <span class="string">"@"</span> + <span class="module-access"><span class="module"><span class="identifier">Integer</span>.</span></span><span class="keyword">to</span><span class="constructor">HexString(<span class="params">hashCode</span>()</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>3.像String、Data、File、包装类等都重写了Object类中的toString()方法,<br>使得在调用同String()时，返回”实体内容“ </li>
+<li>4.自定义类中也可以重写toString()方法，当调用此方法时，返回”实体内容“    <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ToStringTest</span> &#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">		Animal a = <span class="keyword">new</span> Animal(<span class="string">"Tom"</span>, <span class="number">12</span>);</span><br><span class="line">		Animal a1 = <span class="keyword">new</span> Animal(<span class="string">"Jerry"</span>, <span class="number">10</span>);</span><br><span class="line">		System.out.<span class="built_in">println</span>(a.toString());<span class="comment">//Animal [name=Tom, age=12]</span></span><br><span class="line">		System.out.<span class="built_in">println</span>(a1.toString());</span><br><span class="line">		<span class="comment">//Animal [name=Jerry, age=10]</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> &#123;</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">String</span> name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(<span class="keyword">String</span> name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">String</span> <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"Animal [name="</span> + name + <span class="string">", age="</span> + age + <span class="string">"]"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="单元测试方法的使用"><a href="#单元测试方法的使用" class="headerlink" title="单元测试方法的使用"></a>单元测试方法的使用</h2><ul>
+<li>1</li>
+<li>2<h2 id="包装类的理解"><a href="#包装类的理解" class="headerlink" title="包装类的理解"></a>包装类的理解</h2></li>
+<li>1</li>
+<li>2<h3 id="基本数据类型转化为包装类"><a href="#基本数据类型转化为包装类" class="headerlink" title="基本数据类型转化为包装类"></a>基本数据类型转化为包装类</h3></li>
+<li>1</li>
+<li>2<h3 id="包装类和String的转换"><a href="#包装类和String的转换" class="headerlink" title="包装类和String的转换"></a>包装类和String的转换</h3></li>
+<li>1</li>
+<li>2</li>
+</ul>
 
       
 
@@ -458,6 +528,22 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">方法的重写</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">向下转型</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">instanceof</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">equals()</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">toString()</a>
         		</li>
       		
 		</ul>
@@ -556,7 +642,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java面向对象-中篇"><span class="toc-number">1.</span> <span class="toc-text">Java面向对象(中篇)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象的特征之一：封装与隐藏"><span class="toc-number">2.</span> <span class="toc-text">面向对象的特征之一：封装与隐藏</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题引入："><span class="toc-number">2.1.</span> <span class="toc-text">问题引入：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装性的体现："><span class="toc-number">2.2.</span> <span class="toc-text">封装性的体现：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装性的体现，需要权限修饰符来配合。"><span class="toc-number">2.2.1.</span> <span class="toc-text">封装性的体现，需要权限修饰符来配合。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">2.2.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结封装性：Java提供了四种权限修饰符来修饰类及类的内部结构，体现类及类的内部结构再被调用时可见性的大小。"><span class="toc-number">2.3.</span> <span class="toc-text">总结封装性：Java提供了四种权限修饰符来修饰类及类的内部结构，体现类及类的内部结构再被调用时可见性的大小。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this关键字的使用"><span class="toc-number">2.4.</span> <span class="toc-text">this关键字的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import关键字的使用"><span class="toc-number">2.5.</span> <span class="toc-text">import关键字的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象的特征之二：继承性"><span class="toc-number">3.</span> <span class="toc-text">面向对象的特征之二：继承性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#继承性的好处"><span class="toc-number">3.1.</span> <span class="toc-text">继承性的好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承的格式：class-A-extends-B"><span class="toc-number">3.2.</span> <span class="toc-text">继承的格式：class A extends B{ }</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-中关于类的规定-单继承性"><span class="toc-number">3.3.</span> <span class="toc-text">Java 中关于类的规定   单继承性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">3.4.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super关键字"><span class="toc-number">3.5.</span> <span class="toc-text">super关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#super关键字的使用"><span class="toc-number">3.5.1.</span> <span class="toc-text">super关键字的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子类对象实体话的全过程"><span class="toc-number">3.5.2.</span> <span class="toc-text">子类对象实体话的全过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#明确：虽然创建子类对象时，调用了父类的构造器，但是自始至终就创建过一个对象，即为new的子类对象"><span class="toc-number">3.6.</span> <span class="toc-text">明确：虽然创建子类对象时，调用了父类的构造器，但是自始至终就创建过一个对象，即为new的子类对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象的特性之三：多态性"><span class="toc-number">4.</span> <span class="toc-text">面向对象的特性之三：多态性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法的重写"><span class="toc-number">4.1.</span> <span class="toc-text">方法的重写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态性的理解"><span class="toc-number">4.2.</span> <span class="toc-text">多态性的理解</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java面向对象-中篇"><span class="toc-number">1.</span> <span class="toc-text">Java面向对象(中篇)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象的特征之一：封装与隐藏"><span class="toc-number">2.</span> <span class="toc-text">面向对象的特征之一：封装与隐藏</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题引入："><span class="toc-number">2.1.</span> <span class="toc-text">问题引入：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装性的体现："><span class="toc-number">2.2.</span> <span class="toc-text">封装性的体现：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装性的体现，需要权限修饰符来配合。"><span class="toc-number">2.2.1.</span> <span class="toc-text">封装性的体现，需要权限修饰符来配合。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">2.2.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结封装性：Java提供了四种权限修饰符来修饰类及类的内部结构，体现类及类的内部结构再被调用时可见性的大小。"><span class="toc-number">2.3.</span> <span class="toc-text">总结封装性：Java提供了四种权限修饰符来修饰类及类的内部结构，体现类及类的内部结构再被调用时可见性的大小。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this关键字的使用"><span class="toc-number">2.4.</span> <span class="toc-text">this关键字的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import关键字的使用"><span class="toc-number">2.5.</span> <span class="toc-text">import关键字的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象的特征之二：继承性"><span class="toc-number">3.</span> <span class="toc-text">面向对象的特征之二：继承性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#继承性的好处"><span class="toc-number">3.1.</span> <span class="toc-text">继承性的好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承的格式：class-A-extends-B"><span class="toc-number">3.2.</span> <span class="toc-text">继承的格式：class A extends B{ }</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-中关于类的规定-单继承性"><span class="toc-number">3.3.</span> <span class="toc-text">Java 中关于类的规定   单继承性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">3.4.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super关键字"><span class="toc-number">3.5.</span> <span class="toc-text">super关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#super关键字的使用"><span class="toc-number">3.5.1.</span> <span class="toc-text">super关键字的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子类对象实体话的全过程"><span class="toc-number">3.5.2.</span> <span class="toc-text">子类对象实体话的全过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#明确：虽然创建子类对象时，调用了父类的构造器，但是自始至终就创建过一个对象，即为new的子类对象"><span class="toc-number">3.6.</span> <span class="toc-text">明确：虽然创建子类对象时，调用了父类的构造器，但是自始至终就创建过一个对象，即为new的子类对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象的特性之三：多态性"><span class="toc-number">4.</span> <span class="toc-text">面向对象的特性之三：多态性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法的重写"><span class="toc-number">4.1.</span> <span class="toc-text">方法的重写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态性的理解"><span class="toc-number">4.2.</span> <span class="toc-text">多态性的理解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#向下转型的几个常见问题"><span class="toc-number">4.2.1.</span> <span class="toc-text">向下转型的几个常见问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof的使用"><span class="toc-number">4.2.2.</span> <span class="toc-text">instanceof的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多态性练习"><span class="toc-number">4.2.3.</span> <span class="toc-text">多态性练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类的剖析"><span class="toc-number">4.3.</span> <span class="toc-text">Object类的剖析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#和equals-的使用区别"><span class="toc-number">4.3.1.</span> <span class="toc-text">&#x3D;&#x3D;和equals()的使用区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toString-方法的使用"><span class="toc-number">4.3.2.</span> <span class="toc-text">toString()方法的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单元测试方法的使用"><span class="toc-number">4.4.</span> <span class="toc-text">单元测试方法的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类的理解"><span class="toc-number">4.5.</span> <span class="toc-text">包装类的理解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型转化为包装类"><span class="toc-number">4.5.1.</span> <span class="toc-text">基本数据类型转化为包装类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包装类和String的转换"><span class="toc-number">4.5.2.</span> <span class="toc-text">包装类和String的转换</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -676,7 +762,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">家庭收支</a>
+                <a href="javascript:void(0)" class="js-tag color4">关键字</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">保留字</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">标识符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命名规则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,23 +794,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">关键字</a>
+                <a href="javascript:void(0)" class="js-tag color3">if-else</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">保留字</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">标识符</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">命名规则</a>
+                <a href="javascript:void(0)" class="js-tag color2">switch-case</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">家庭收支</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -748,15 +842,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">if-else</a>
+                <a href="javascript:void(0)" class="js-tag color5">向下转型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">switch-case</a>
+                <a href="javascript:void(0)" class="js-tag color1">instanceof</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入坑</a>
+                <a href="javascript:void(0)" class="js-tag color4">equals()</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">toString()</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java变量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,11 +874,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java变量</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+                <a href="javascript:void(0)" class="js-tag color3">入坑</a>
               </li>
              
               <li class="article-tag-list-item">
