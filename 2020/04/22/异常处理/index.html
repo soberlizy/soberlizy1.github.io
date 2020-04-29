@@ -6,17 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>欢迎来到super king的博客</title>
+  <title>异常处理 | 欢迎来到super king的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="长远的生活需要清醒">
-<meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到super king的博客">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="Java中异常的处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异常处理">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="欢迎来到super king的博客">
-<meta property="og:description" content="长远的生活需要清醒">
+<meta property="og:description" content="Java中异常的处理">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/.com//%E7%BC%96%E8%AF%91%E6%97%B6%E5%BC%82%E5%B8%B8%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8.png">
+<meta property="og:image" content="http://yoursite.com/.com//%E5%BC%82%E5%B8%B8%E7%9A%84%E6%8A%93%E6%8A%9B%E6%9C%BA%E5%88%B6.png">
+<meta property="og:image" content="http://yoursite.com/.com//%E5%BC%82%E5%B8%B8%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E6%80%BB%E7%BB%93.png">
+<meta property="article:published_time" content="2020-04-22T13:06:25.000Z">
+<meta property="article:modified_time" content="2020-04-22T14:20:27.549Z">
 <meta property="article:author" content="可乐不可乐呀。">
+<meta property="article:tag" content="异常处理">
+<meta property="article:tag" content="throw">
+<meta property="article:tag" content="throws">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//%E7%BC%96%E8%AF%91%E6%97%B6%E5%BC%82%E5%B8%B8%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8.png">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到super king的博客" type="application/atom+xml">
   
@@ -217,40 +226,128 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java基础-变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-异常处理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/28/Java%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F/">Java基础-变量</a>
+    <h1 class="article-title" itemprop="name">
+      异常处理
     </h1>
   
 
         
-        <a href="/2020/03/28/Java%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2020-03-28T13:15:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
+        <a href="/2020/04/22/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-04-22T13:06:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
 </a>
         <!--显示阅读次数-->
           
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+           <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+
 <!--显示阅读次数完毕-->
         
       </header>
     
     <div align="center" class="post-count">
-      字数：1.5k字 | 预计阅读时长：6分钟
+      字数：2.4k字 | 预计阅读时长：9分钟
    </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1>
-        
-          <a class="article-more-a" href="/2020/03/28/Java%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F/#more">more >></a>
-        
+        <h1 id="Java中异常的处理"><a href="#Java中异常的处理" class="headerlink" title="Java中异常的处理"></a>Java中异常的处理</h1><a id="more"></a>
+<h2 id="异常概述与异常体系结构"><a href="#异常概述与异常体系结构" class="headerlink" title="异常概述与异常体系结构"></a>异常概述与异常体系结构</h2><p>在使用计算机语言进行项目开发的过程中，即使程序员把代码写得尽善尽美，在系统的运行过程中仍然会遇到一些问题，因为很多问题不是靠代码能够避免的，比如：客户输入数据的格式，读取文件是否存在，网络是否始终保持通畅等等。     </p>
+<ul>
+<li>异常：在Java语言中，将程序执行中发生的不正常情况称为“异常”。 (开发过程中的语法错误和逻辑错误不是异常) </li>
+<li>Java程序在执行过程中所发生的异常事件可分为两类：<ul>
+<li>Error：Java虚拟机无法解决的严重问题。如：JVM系统内部错误、资源 耗尽等严重情况。比如：StackOverflowError和OOM。一般不编写针对性 的代码进行处理。      </li>
+<li>Exception: 其它因编程错误或偶然的外在因素导致的一般性问题，可以使 用针对性的代码进行处理。例如：<br> 空指针访问<br> 试图读取不存在的文件<br> 网络连接中断<br> 数组角标越界</li>
+</ul>
+</li>
+<li>对于这些错误，一般有两种解决方法：一是遇到错误就终止程序 的运行。另一种方法是由程序员在编写程序时，就考虑到错误的 检测、错误消息的提示，以及错误的处理。</li>
+<li>捕获错误最理想的是在编译期间，但有的错误只有在运行时才会发生。 比如：除数为0，数组下标越界等<br><img src="/.com//%E7%BC%96%E8%AF%91%E6%97%B6%E5%BC%82%E5%B8%B8%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8.png" alt="编译时异常和运行时异常.png">     </li>
+<li>1.运行时异常：<br>是指编译器不要求强制处置的异常。一般是指编程时的逻辑错误，是程序 员应该积极避免其出现的异常。  java.lang.RuntimeException类及它的子 类都是运行时异常。<br>对于这类异常，可以不作处理，因为这类异常很普遍，若全处理可能会对 程序的可读性和运行效率产生影响</li>
+<li>2.编译时异常<br>是指编译器要求必须处置的异常。即程序在运行时由于外界因素造成的一 般性异常。编译器要求Java程序必须捕获或声明所有编译时异常。<br>对于这类异常，如果程序不处理，可能会带来意想不到的结果。<h2 id="常见异常"><a href="#常见异常" class="headerlink" title="常见异常"></a>常见异常</h2></li>
+<li>java.lang.RuntimeException      ClassCastException       ArrayIndexOutOfBoundsException       NullPointerException<br>ArithmeticException<br>NumberFormatException<br>InputMismatchException<br>。。。        </li>
+<li>java.io.IOExeption<br>FileNotFoundException<br>EOFException     </li>
+<li>java.lang.ClassNotFoundException </li>
+<li>java.lang.InterruptedException </li>
+<li>java.io.FileNotFoundException</li>
+<li>java.sql.SQLException<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/* java.lang.Throwable</span><br><span class="line"> * 		<span class="string">|----java.lang.Error:一般不编写针对性的代码进行处理</span></span><br><span class="line"> * 		<span class="string">|----java.lang.Exception：可以进行异常的处理</span></span><br><span class="line"> * 			<span class="string">|----编译时异常（checked)</span></span><br><span class="line"> * 				<span class="string">|----IOException</span></span><br><span class="line"> * 					<span class="string">|----FileNotFoundException</span></span><br><span class="line"> * 				<span class="string">|----ClassNotFoundException</span></span><br><span class="line"> * 			<span class="string">|----运行时异常（unchecked,RuntimeException）</span></span><br><span class="line"> * 				<span class="string">|-----NullPointerException</span></span><br><span class="line"> * 				<span class="string">|-----ArrayIndexOutOfBoundsException</span></span><br><span class="line"> * 				<span class="string">|-----ClassCastException</span></span><br><span class="line"> * 				<span class="string">|-----NumberFormatException</span></span><br><span class="line"> * 				<span class="string">|-----InputMismatchException</span></span><br><span class="line"> * 				<span class="string">|-----ArithmeticException</span></span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<h2 id="异常的处理机制一：try-catch-finally"><a href="#异常的处理机制一：try-catch-finally" class="headerlink" title="异常的处理机制一：try-catch-finally"></a>异常的处理机制一：try-catch-finally</h2></li>
+<li>Java提供的是异常处理的抓抛模型。 </li>
+<li>Java程序的执行过程中如出现异常，会生成一个异常类对象， 该异常对象将被提交给Java运行时系统，这个过程称为抛出 (throw)异常。</li>
+<li>异常对象的生成<br>由虚拟机自动生成：程序运行过程中，虚拟机检测到程序发生了问题，如果在当 前代码中没有找到相应的处理程序，就会在后台自动创建一个对应异常类的实例 对象并抛出——自动抛出<br>由开发人员手动创建：Exception exception = new ClassCastException();——创 建好的异常对象不抛出对程序没有任何影响，和创建一个普通对象一样<br><img src="/.com//%E5%BC%82%E5%B8%B8%E7%9A%84%E6%8A%93%E6%8A%9B%E6%9C%BA%E5%88%B6.png" alt="异常的抓抛机制.png"></li>
+<li>如果一个方法内抛出异常，该异常对象会被抛给调用者方法中处理。如果异常没有在调用者方法中处理，它继续被抛给这个调用 方法的上层方法。这个过程将一直继续下去，直到异常被处理。 这一过程称为捕获(catch)异常。 </li>
+<li>如果一个异常回到main()方法，并且main()也不处理，则程序运 行终止。</li>
+<li>程序员通常只能处理Exception，而对Error无能为力。</li>
+<li>异常处理是通过try-catch-finally语句实现的。<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try&#123; </span><br><span class="line">    <span class="params">...</span><span class="params">...</span> <span class="comment">//可能产生异常的代码 </span></span><br><span class="line">    &#125;</span><br><span class="line">catch( ExceptionName1 e )&#123;</span><br><span class="line">     <span class="params">...</span><span class="params">...</span> <span class="comment">//当产生ExceptionName1型异常时的处置措施 </span></span><br><span class="line">     &#125; catch( ExceptionName2 e )&#123;</span><br><span class="line">     <span class="params">...</span><span class="params">...</span> <span class="comment">//当产生ExceptionName2型异常时的处置措施</span></span><br><span class="line">    &#125;finally&#123;</span><br><span class="line">     <span class="params">...</span><span class="params">...</span> <span class="comment">//无论是否发生异常，都无条件执行的语句</span></span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></li>
+<li>try<br>捕获异常的第一步是用try{…}语句块选定捕获异常的范围，将可能出现 异常的代码放在try语句块中。</li>
+<li>catch (Exceptiontype e)<br>在catch语句块中是对异常对象进行处理的代码。每个try语句块可以伴随 一个或多个catch语句，用于处理可能产生的不同类型的异常对象。</li>
+<li>finally<br>①捕获异常的最后一步是通过finally语句为异常处理提供一个 统一的出口，使得在控制流转到程序的其它部分以前，能够 对程序的状态作统一的管理。<br>②不论在try代码块中是否发生了异常事件，catch语句是否执 行，catch语句是否有异常，catch语句中是否有return， finally块中的语句都会被执行。<br>③finally语句和catch语句是任选的</li>
+<li>体会<ul>
+<li>体会1：使用try-catch-finally处理编译时异常，使得程序在编译时不再报错，但是运行时仍可能博报错<br>相当于我们使用try-catch-finally将一个编译时可能出现的异常，延时到运行时出现。</li>
+<li>体会2：开发中，由于运行时异常比较常见，所以我们通常就不针对运行时异常编写try-catch-finally了。针对编译时异常，我们一定要考虑异常的处理。</li>
+</ul>
+</li>
+</ul>
+<h3 id="测试案例"><a href="#测试案例" class="headerlink" title="测试案例"></a>测试案例</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionTest1</span> &#123;</span></span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">String</span> str = <span class="string">"123"</span>;</span><br><span class="line">		str = <span class="string">"abc"</span>;</span><br><span class="line">		<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			num = Integer.<span class="built_in">parseInt</span>(str);</span><br><span class="line">			System.out.<span class="built_in">println</span>(<span class="string">"hello-1"</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (NumberFormatException e) &#123;</span><br><span class="line">			<span class="comment">// System.out.println("出现数值转换异常了，不要着急~~~~");</span></span><br><span class="line">			<span class="comment">// String getMeString();</span></span><br><span class="line">			<span class="comment">// System.out.println(e.getMessage());</span></span><br><span class="line">			<span class="comment">// ptintStackTrace</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">			System.out.<span class="built_in">println</span>(<span class="string">"出现空指针异常了，不要着急~~~"</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			System.out.<span class="built_in">println</span>(<span class="string">"出现异常了，不要着急~~~~~"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.<span class="built_in">println</span>(num);</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"hello-2"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="异常的处理机制二：throws"><a href="#异常的处理机制二：throws" class="headerlink" title="异常的处理机制二：throws"></a>异常的处理机制二：throws</h2><ul>
+<li>声明抛出异常是Java中处理异常的第二种方式<br>① 如果一个方法(中的语句执行时)可能生成某种异常，但是并不能确定如何处理这 种异常，则此方法应显示地声明抛出异常，表明该方法将不对这些异常进行处理， 而由该方法的调用者负责处理。<br>② 在方法声明中用throws语句可以声明抛出异常的列表，throws后面的异常类型可 以是方法中产生的异常类型，也可以是它的父类      </li>
+<li>声明抛出异常举例： <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFile</span><span class="params">(<span class="keyword">String</span> file)</span> throws FileNotFoundException </span>&#123;</span><br><span class="line">     …… <span class="comment">// 读文件的操作可能产生FileNotFoundException类型的异常 FileInputStream fis = new FileInputStream(file); </span></span><br><span class="line">     ..……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+###重写方法声明抛出异常的原则</li>
+<li>重写方法不能抛出比被重写方法范围更大的异常类型。在多态的情况下， 对methodA()方法的调用-异常的捕获按父类声明的异常处理<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">     public void methodA() <span class="keyword">throws</span> <span class="type">IOException</span> &#123;</span><br><span class="line">          …… </span><br><span class="line">    &#125;  &#125; </span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">B1</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">     public void methodA() <span class="keyword">throws</span> <span class="type">FileNotFoundException</span> &#123;</span><br><span class="line">     …… </span><br><span class="line">     &#125;  &#125; </span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">B2</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123; </span><br><span class="line">    public void methodA() <span class="keyword">throws</span> <span class="type">Exception</span> &#123;   <span class="comment">//报错</span></span><br><span class="line">     …… </span><br><span class="line">     &#125;  &#125;</span><br></pre></td></tr></table></figure></li>
+<li>案例：<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> ExceptionTest2 &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">		<span class="comment">// 把异常抛给main方法中</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			method2();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// method3();</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> method3() &#123;</span><br><span class="line">		<span class="comment">// 调用方法时处理</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			method2();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 调用方法时抛出异常；</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> method2() <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">		method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// throws + 异常类型</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> method1() <span class="keyword">throws</span> FileNotFoundException, IOException &#123;</span><br><span class="line">		<span class="keyword">File</span> <span class="keyword">file</span> = <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"hello1.txt"</span>);</span><br><span class="line">		FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="keyword">file</span>);</span><br><span class="line">		<span class="keyword">int</span> data = fis.<span class="keyword">read</span>();</span><br><span class="line">		<span class="keyword">while</span> (data != -<span class="number">1</span>) &#123;</span><br><span class="line">			System.out.<span class="keyword">print</span>((<span class="keyword">char</span>) data);</span><br><span class="line">			data = fis.<span class="keyword">read</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		fis.close();</span><br><span class="line">		System.out.<span class="keyword">println</span>(<span class="string">"hahaha!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="手动抛出异常"><a href="#手动抛出异常" class="headerlink" title="手动抛出异常"></a>手动抛出异常</h2></li>
+<li>Java异常类对象除在程序执行过程中出现异常时由系统自动生成并 抛出，也可根据需要使用人工创建并抛出。<br>① 首先要生成异常类对象，然后通过throw语句实现抛出操作(提交给Java运 行环境)。<br>IOException e = new IOException();<br>throw e;<br>② 可以抛出的异常必须是Throwable或其子类的实例。下面的语句在编译时将 会产生语法错误：<br>throw new String(“want to throw”);<h2 id="用户自定义抛出异常类"><a href="#用户自定义抛出异常类" class="headerlink" title="用户自定义抛出异常类"></a>用户自定义抛出异常类</h2></li>
+<li>一般地，用户自定义异常类都是RuntimeException的子类。 </li>
+<li>自定义异常类通常需要编写几个重载的构造器。</li>
+<li>自定义异常需要提供serialVersionUID</li>
+<li>自定义的异常通过throw抛出。 </li>
+<li>自定义异常最重要的是异常类的名字，当异常出现时，可以根据名字判断异常类型。<br>用户自定义异常类MyException，用于描述数据取值范围错误信息。用户 自己的异常类必须继承现有的异常类。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123; </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">13465653435L</span>; </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> idnumber;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">(String message, <span class="keyword">int</span> id)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">super</span>(message);</span><br><span class="line">    <span class="keyword">this</span>.idnumber = id; </span><br><span class="line">     &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> idnumber; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>案例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><img src="/.com//%E5%BC%82%E5%B8%B8%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E6%80%BB%E7%BB%93.png" alt="异常关键字的总结.png">     </li>
+<li><strong>一首小悟结束异常处理</strong><br>世界上最遥远的距离，是我在if里你在else里，似乎一直相伴又永远分离；<br>世界上最痴心的等待，是我当case你是switch，或许永远都选不上自己；<br>世界上最真情的相依，是你在try我在catch。无论你发神马脾气，我都默 默承受，静静处理。到那时，再来期待我们的finally。</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/sxzf.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -261,105 +358,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java变量</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">异常处理</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/28/Java%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java基本语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/27/Java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">Java基本语法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/27/Java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-03-27T15:49:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
-        <!--显示阅读次数-->
-          
-<!--显示阅读次数完毕-->
-        
-      </header>
-    
-    <div align="center" class="post-count">
-      字数：246字 | 预计阅读时长：1分钟
-   </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基本语法知识"><a href="#基本语法知识" class="headerlink" title="基本语法知识"></a>基本语法知识</h1>
-        
-          <a class="article-more-a" href="/2020/03/27/Java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">关键字</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">throw</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">保留字</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标识符</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">命名规则</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">throws</a>
         		</li>
       		
 		</ul>
@@ -368,16 +375,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/27/Java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/22/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/21/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E4%B8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java面向对象-下</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -392,403 +458,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/27/1/">JAVA第一天</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/27/1/" class="archive-article-date">
-  	<time datetime="2020-03-27T07:28:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
-        <!--显示阅读次数-->
-          
-<!--显示阅读次数完毕-->
-        
-      </header>
-    
-    <div align="center" class="post-count">
-      字数：707字 | 预计阅读时长：3分钟
-   </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-1-基础常识篇"><a href="#1-1-基础常识篇" class="headerlink" title="1.1 基础常识篇"></a>1.1 基础常识篇</h1>
-        
-          <a class="article-more-a" href="/2020/03/27/1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java学习思路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java基础//" class="article-tag-list-link color2">java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/27/1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java中异常的处理"><span class="toc-number">1.</span> <span class="toc-text">Java中异常的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异常概述与异常体系结构"><span class="toc-number">1.1.</span> <span class="toc-text">异常概述与异常体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见异常"><span class="toc-number">1.2.</span> <span class="toc-text">常见异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常的处理机制一：try-catch-finally"><span class="toc-number">1.3.</span> <span class="toc-text">异常的处理机制一：try-catch-finally</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#测试案例"><span class="toc-number">1.3.1.</span> <span class="toc-text">测试案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常的处理机制二：throws"><span class="toc-number">1.4.</span> <span class="toc-text">异常的处理机制二：throws</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手动抛出异常"><span class="toc-number">1.5.</span> <span class="toc-text">手动抛出异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户自定义抛出异常类"><span class="toc-number">1.6.</span> <span class="toc-text">用户自定义抛出异常类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.7.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-java入坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/27/java%E5%85%A5%E5%9D%91/">java入坑</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/27/java%E5%85%A5%E5%9D%91/" class="archive-article-date">
-  	<time datetime="2020-03-27T06:57:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
-        <!--显示阅读次数-->
-          
-<!--显示阅读次数完毕-->
-        
-      </header>
-    
-    <div align="center" class="post-count">
-      字数：138字 | 预计阅读时长：1分钟
-   </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="入坑java的学习之路"><a href="#入坑java的学习之路" class="headerlink" title="入坑java的学习之路"></a>入坑java的学习之路</h1>
-        
-          <a class="article-more-a" href="/2020/03/27/java%E5%85%A5%E5%9D%91/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">入坑</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/27/java%E5%85%A5%E5%9D%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-摘抄" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/23/%E6%91%98%E6%8A%84/">摘抄</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/23/%E6%91%98%E6%8A%84/" class="archive-article-date">
-  	<time datetime="2020-03-23T07:30:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
-</a>
-        <!--显示阅读次数-->
-          
-<!--显示阅读次数完毕-->
-        
-      </header>
-    
-    <div align="center" class="post-count">
-      字数：2.1k字 | 预计阅读时长：7分钟
-   </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>周末愉快</p>
-<h2 id="晚记–男女有哪些思维上的差异？"><a href="#晚记–男女有哪些思维上的差异？" class="headerlink" title="晚记–男女有哪些思维上的差异？"></a>晚记–男女有哪些思维上的差异？</h2><p><img src="/.com//1.jpg" alt="晚安">  </p>
-        
-          <a class="article-more-a" href="/2020/03/23/%E6%91%98%E6%8A%84/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/23/%E6%91%98%E6%8A%84/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第二篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第二篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-03-22T05:53:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        <!--显示阅读次数-->
-          
-<!--显示阅读次数完毕-->
-        
-      </header>
-    
-    <div align="center" class="post-count">
-      字数：0字 | 预计阅读时长：1分钟
-   </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/">我的第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/" class="archive-article-date">
-  	<time datetime="2020-03-21T15:43:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-21</time>
-</a>
-        <!--显示阅读次数-->
-          
-<!--显示阅读次数完毕-->
-        
-      </header>
-    
-    <div align="center" class="post-count">
-      字数：2k字 | 预计阅读时长：9分钟
-   </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="2019年3月21"><a href="#2019年3月21" class="headerlink" title="2019年3月21"></a>2019年3月21</h1><p><img src="/.com//thumb-1920-280633.jpg" alt="晚安"></p>
-        
-          <a class="article-more-a" href="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -814,8 +509,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
