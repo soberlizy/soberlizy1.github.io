@@ -8,17 +8,35 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>集合 | 欢迎来到super king的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="长远的生活需要清醒">
+  <meta name="description" content="集合的概述认识 一方面， 面向对象语言对事物的体现都是以对象的形式，为了方便对多个对象 的操作，就要对对象进行存储。另一方面，使用Array存储对象方面具有一些弊 端，而Java 集合就像一种容器，可以动态地把多个对象的引用放入容器中。  数组在内存存储方面的特点：  数组初始化以后，长度就确定了。  数组声明的类型，就决定了进行元素初始化时的类型    数组在存储数据方面的弊端：  数组初始化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集合">
 <meta property="og:url" content="http://yoursite.com/2020/05/04/%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="欢迎来到super king的博客">
-<meta property="og:description" content="长远的生活需要清醒">
+<meta property="og:description" content="集合的概述认识 一方面， 面向对象语言对事物的体现都是以对象的形式，为了方便对多个对象 的操作，就要对对象进行存储。另一方面，使用Array存储对象方面具有一些弊 端，而Java 集合就像一种容器，可以动态地把多个对象的引用放入容器中。  数组在内存存储方面的特点：  数组初始化以后，长度就确定了。  数组声明的类型，就决定了进行元素初始化时的类型    数组在存储数据方面的弊端：  数组初始化">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/.com//Collection.png">
+<meta property="og:image" content="http://yoursite.com/.com//%E8%BF%AD%E4%BB%A3%E5%99%A8.png">
 <meta property="article:published_time" content="2020-05-04T15:08:47.000Z">
-<meta property="article:modified_time" content="2020-05-04T15:08:47.662Z">
+<meta property="article:modified_time" content="2020-05-05T12:10:35.593Z">
 <meta property="article:author" content="可乐不可乐呀。">
+<meta property="article:tag" content="Collection">
+<meta property="article:tag" content="Collections">
+<meta property="article:tag" content="List">
+<meta property="article:tag" content="Set">
+<meta property="article:tag" content="Map">
+<meta property="article:tag" content="ArrayList">
+<meta property="article:tag" content="LinkedList">
+<meta property="article:tag" content="Vector">
+<meta property="article:tag" content="HashSet">
+<meta property="article:tag" content="LinkedHashSet">
+<meta property="article:tag" content="TreeSet">
+<meta property="article:tag" content="HashMap">
+<meta property="article:tag" content="TreeMap">
+<meta property="article:tag" content="LinkedHashMap">
+<meta property="article:tag" content="Hashtable">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//Collection.png">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到super king的博客" type="application/atom+xml">
   
@@ -86,7 +104,7 @@
             
 		</nav>
 		<nav>
-			总字数 <span class="post-count">34.5k</span>
+			总字数 <span class="post-count">39k</span>
 		</nav>
 		<nav>
 			总文章数 20
@@ -249,11 +267,177 @@
       </header>
     
     <div align="center" class="post-count">
-      字数：0字 | 预计阅读时长：1分钟
+      字数：4.5k字 | 预计阅读时长：18分钟
    </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <a id="more"></a>
+<h1 id="集合的概述"><a href="#集合的概述" class="headerlink" title="集合的概述"></a>集合的概述</h1><h2 id="认识"><a href="#认识" class="headerlink" title="认识"></a>认识</h2><ul>
+<li>一方面， 面向对象语言对事物的体现都是以对象的形式，为了方便对多个对象 的操作，就要对对象进行存储。另一方面，使用Array存储对象方面具有一些弊 端，而Java 集合就像一种容器，可以动态地把多个对象的引用放入容器中。 <ul>
+<li>数组在内存存储方面的特点： <ul>
+<li>数组初始化以后，长度就确定了。 </li>
+<li>数组声明的类型，就决定了进行元素初始化时的类型 </li>
+</ul>
+</li>
+<li>数组在存储数据方面的弊端： <ul>
+<li>数组初始化以后，长度就不可变了，不便于扩展 </li>
+<li>数组中提供的属性和方法少，不便于进行添加、删除、插入等操作，且效率不高。 同时无法直接获取存储元素的个数 </li>
+<li>数组存储的数据是有序的、可以重复的。—-&gt;存储数据的特点单一 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Java 集合类可以用于存储数量不等的多个对象，还可用于保存具有映射关系的 关联数组<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2>Java 集合可分为 Collection 和 Map 两种体系    </li>
+<li>Collection接口：单列数据，定义了存取一组对象的方法的集合<ul>
+<li>List：元素有序、可重复的集合</li>
+<li>Set：元素无序、不可重复的集合</li>
+</ul>
+</li>
+<li>Map接口：双列数据，保存具有映射关系“key-value对”的集合<h1 id="数组与集合"><a href="#数组与集合" class="headerlink" title="数组与集合"></a>数组与集合</h1></li>
+<li>1.集合与数组存储数据概述：<br>集合、数组都是对多个数据进行存储操作的结构，简称Java容器。<br>说明：此时的存储，主要指的是内存层面的存储，不涉及到持久化的存储（.txt,.jpg,.avi，数据库中)</li>
+<li>2.数组存储的特点：<ul>
+<li>一旦初始化以后，其长度就确定了。</li>
+<li>数组一旦定义好，其元素的类型也就确定了。我们也就只能操作指定类型的数据了。<br>比如：String[] arr;int[] arr1;Object[] arr2;</li>
+</ul>
+</li>
+<li>3.数组存储的弊端：<ul>
+<li>一旦初始化以后，其长度就不可修改。</li>
+<li>数组中提供的方法非常限，对于添加、删除、插入数据等操作，非常不便，同时效率不高。</li>
+<li>获取数组中实际元素的个数的需求，数组没有现成的属性或方法可用</li>
+<li>数组存储数据的特点：有序、可重复。对于无序、不可重复的需求，不能满足。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>集合存储的优点：<br>解决数组存储数据方面的弊端。<h1 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h1><h2 id="1-框架"><a href="#1-框架" class="headerlink" title="1.框架"></a>1.框架</h2><img src="/.com//Collection.png" alt="Collection"><h2 id="2-Collection接口常用方法："><a href="#2-Collection接口常用方法：" class="headerlink" title="2.Collection接口常用方法："></a>2.Collection接口常用方法：</h2></li>
+</ol>
+<ul>
+<li>add(Object obj),addAll(Collection coll),size(),isEmpty(),clear();</li>
+<li>contains(Object obj),containsAll(Collection coll),remove(Object obj),removeAll(Collection coll),retainsAll(Collection coll),equals(Object obj);</li>
+<li>hasCode(),toArray(),iterator();<h2 id="3-Collection集合与数组间的转换"><a href="#3-Collection集合与数组间的转换" class="headerlink" title="3.Collection集合与数组间的转换"></a>3.Collection集合与数组间的转换</h2><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//集合 ---&gt;数组：toArray()</span></span><br><span class="line">Object<span class="literal">[]</span> arr = coll.<span class="keyword">to</span><span class="constructor">Array()</span>;</span><br><span class="line">for(<span class="built_in">int</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</span><br><span class="line">    <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(arr<span class="literal">[<span class="identifier">i</span>]</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//拓展：数组 ---&gt;集合:调用Arrays类的静态方法asList(T ... t)</span></span><br><span class="line">List&lt;String&gt; <span class="built_in">list</span> = <span class="module-access"><span class="module"><span class="identifier">Arrays</span>.</span></span><span class="keyword">as</span><span class="constructor">List(<span class="params">new</span> String[]&#123;<span class="string">"AA"</span>, <span class="string">"BB"</span>, <span class="string">"CC"</span>&#125;)</span>;</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="built_in">list</span>);</span><br><span class="line"></span><br><span class="line">List arr1 = <span class="module-access"><span class="module"><span class="identifier">Arrays</span>.</span></span><span class="keyword">as</span><span class="constructor">List(<span class="params">new</span> <span class="params">int</span>[]&#123;123, 456&#125;)</span>;</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(arr1.size<span class="literal">()</span>);<span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">List arr2 = <span class="module-access"><span class="module"><span class="identifier">Arrays</span>.</span></span><span class="keyword">as</span><span class="constructor">List(<span class="params">new</span> Integer[]&#123;123, 456&#125;)</span>;</span><br><span class="line"><span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(arr2.size<span class="literal">()</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="4-使用Collection集合存储对象，要求对象所属的类满足："><a href="#4-使用Collection集合存储对象，要求对象所属的类满足：" class="headerlink" title="4.使用Collection集合存储对象，要求对象所属的类满足："></a>4.使用Collection集合存储对象，要求对象所属的类满足：</h2>向Collection接口的实现类的对象中添加数据obj时，要求obj所在类要重写equals().<h2 id="5-本章节要求："><a href="#5-本章节要求：" class="headerlink" title="5.本章节要求："></a>5.本章节要求：</h2></li>
+<li>层次一：选择合适的集合类去实现数据的保存，调用其内部的相关方法。</li>
+<li>层次二：不同的集合类底层的数据结构为何？如何实现数据的操作的：增删改查等。<h1 id="Iterator接口与foreach循环"><a href="#Iterator接口与foreach循环" class="headerlink" title="Iterator接口与foreach循环"></a>Iterator接口与foreach循环</h1></li>
+<li>1.遍历Collection的两种方式：<br>① 使用迭代器Iterator<br>② foreach循环（或增强for循环）</li>
+<li>2.java.utils包下定义的迭代器接口：Iterator<ul>
+<li>2.1说明：<br>Iterator对象称为迭代器(设计模式的一种)，主要用于遍历 Collection 集合中的元素。<br>GOF给迭代器模式的定义为：提供一种方法访问一个容器(container)对象中各个元素，而又不需暴露该对象的内部细节。迭代器模式，就是为容器而生。</li>
+<li>2.2作用：遍历集合Collectiton元素</li>
+<li>2.3如何获取实例：coll.iterator()返回一个迭代器实例</li>
+<li>2.4遍历的代码实现：<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Iterator</span> <span class="keyword">iterator</span> = coll.<span class="keyword">iterator</span>();</span><br><span class="line">//hasNext():判断是否还下一个元素</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">iterator</span>.hasNext())&#123;</span><br><span class="line">    //next():①指针下移 ②将下移以后集合位置上的元素返回</span><br><span class="line">    <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="keyword">iterator</span>.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>2.6remove()的使用：<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//测试Iterator中的remove()</span></span><br><span class="line"><span class="comment">//如果还未调用next()或在上一次调用 next 方法之后已经调用了 remove 方法，再调用remove都会报IllegalStateException。</span></span><br><span class="line"><span class="comment">//内部定义了remove(),可以在遍历的时候，删除集合中的元素。此方法不同于集合直接调用remove()</span></span><br><span class="line">    @Test</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        Collection coll = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        coll.<span class="keyword">add</span>(<span class="number">123</span>);</span><br><span class="line">        coll.<span class="keyword">add</span>(<span class="number">456</span>);</span><br><span class="line">        coll.<span class="keyword">add</span>(<span class="keyword">new</span> Person(<span class="string">"Jerry"</span>,<span class="number">20</span>));</span><br><span class="line">        coll.<span class="keyword">add</span>(<span class="keyword">new</span> String(<span class="string">"Tom"</span>));</span><br><span class="line">        coll.<span class="keyword">add</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//删除集合中"Tom"</span></span><br><span class="line">        Iterator iterator = coll.iterator();</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line"><span class="comment">//            iterator.remove();</span></span><br><span class="line">            Object obj = iterator.next();</span><br><span class="line">            <span class="keyword">if</span>(<span class="string">"Tom"</span>.<span class="keyword">equals</span>(obj))&#123;</span><br><span class="line">                iterator.<span class="keyword">remove</span>();</span><br><span class="line"><span class="comment">//                iterator.remove();</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//遍历集合</span></span><br><span class="line">        iterator = coll.iterator();</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">            System.<span class="keyword">out</span>.println(iterator.next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>3.jdk5.0新特性–增强for循环：(foreach循环)<ul>
+<li>1.遍历集合举例：<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> test1()&#123;</span><br><span class="line">    Collection coll = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    coll.<span class="built_in">add</span>(<span class="number">123</span>);</span><br><span class="line">    coll.<span class="built_in">add</span>(<span class="number">456</span>);</span><br><span class="line">    coll.<span class="built_in">add</span>(<span class="keyword">new</span> Person(<span class="string">"Jerry"</span>,<span class="number">20</span>));</span><br><span class="line">    coll.<span class="built_in">add</span>(<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"Tom"</span>));</span><br><span class="line">    coll.<span class="built_in">add</span>(<span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//for(集合元素的类型 局部变量 : 集合对象)</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">Object</span> obj : coll)&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+说明：<br>内部仍然调用了迭代器。</li>
+</ul>
+</li>
+</ul>
+<p>2.遍历数组举例：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">void</span> test2()&#123;</span><br><span class="line">    <span class="built_in">int</span>[] arr = new <span class="built_in">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;</span><br><span class="line">    <span class="comment">//for(数组元素的类型 局部变量 : 数组对象)</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> i : arr)&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>迭代器的实现原理<br><img src="/.com//%E8%BF%AD%E4%BB%A3%E5%99%A8.png" alt="迭代器"><h1 id="Collection子接口：List接口"><a href="#Collection子接口：List接口" class="headerlink" title="Collection子接口：List接口"></a>Collection子接口：List接口</h1><h2 id="1-存储的数据特点：存储序的、可重复的数据。"><a href="#1-存储的数据特点：存储序的、可重复的数据。" class="headerlink" title="1.存储的数据特点：存储序的、可重复的数据。"></a>1.存储的数据特点：存储序的、可重复的数据。</h2><h2 id="2-常用方法：-记住"><a href="#2-常用方法：-记住" class="headerlink" title="2.常用方法：(记住)"></a>2.常用方法：(记住)</h2>增：add(Object obj)<br>删：remove(int index) / remove(Object obj)<br>改：set(int index, Object ele)<br>查：get(int index)<br>插：add(int index, Object ele)<br>长度：size()<br>遍历：① Iterator迭代器方式<br>   ② 增强for循环<br>   ③ 普通的循环</li>
+</ul>
+<h2 id="3-常用实现类："><a href="#3-常用实现类：" class="headerlink" title="3.常用实现类："></a>3.常用实现类：</h2><p>|—-Collection接口：单列集合，用来存储一个一个的对象<br>|—-List接口：存储序的、可重复的数据。  –&gt;“动态”数组,替换原的数组<br>|—-ArrayList：作为List接口的主要实现类；线程不安全的，效率高；底层使用Object[] elementData存储<br>|—-LinkedList：对于频繁的插入、删除操作，使用此类效率比ArrayList高；底层使用双向链表存储<br>|—-Vector：作为List接口的古老实现类；线程安全的，效率低；底层使用Object[] elementData存储</p>
+<h2 id="4-源码分析-难点"><a href="#4-源码分析-难点" class="headerlink" title="4.源码分析(难点)"></a>4.源码分析(难点)</h2><h3 id="4-1-ArrayList的源码分析："><a href="#4-1-ArrayList的源码分析：" class="headerlink" title="4.1 ArrayList的源码分析："></a>4.1 ArrayList的源码分析：</h3><ul>
+<li><p>4.1.1 jdk 7情况下  </p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ArrayList <span class="built_in">list</span> = <span class="literal">new</span> ArrayList();<span class="comment">//底层创建了长度是10的Object[]数组elementData</span></span><br><span class="line">     <span class="built_in">list</span>.add(<span class="number">123</span>);<span class="comment">//elementData[0] = new Integer(123);</span></span><br><span class="line">     <span class="params">...</span></span><br><span class="line">   <span class="built_in">list</span>.add(<span class="number">11</span>);<span class="comment">//如果此次的添加导致底层elementData数组容量不够，则扩容。</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下，扩容为原来的容量的1.5倍，同时需要将原有数组中的数据复制到新的数组中。<br>结论：建议开发中使用带参的构造器：ArrayList list = new ArrayList(int capacity)     </p>
+</li>
+<li><p>4.1.2 jdk 8中ArrayList的变化：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list = new ArrayList();//底层Object[] elementData初始化为&#123;&#125;.并没创建长度为<span class="number">10</span>的数组</span><br><span class="line">     list.add(<span class="number">123</span>);//第一次调用add()时，底层才创建了长度<span class="number">10</span>的数组，并将数据<span class="number">123</span>添加到elementData[<span class="number">0</span>]</span><br><span class="line"> ...</span><br><span class="line">    //后续的添加和扩容操作与jdk <span class="number">7</span> 无异。</span><br><span class="line">``` </span><br><span class="line">- <span class="number">4.1</span>.<span class="number">3</span> 小结：jdk7中的ArrayList的对象的创建类似于单例的饿汉式，而jdk8中的ArrayList的对象的创建类似于单例的懒汉式，延迟了数组的创建，节省内存。</span><br><span class="line"><span class="comment">### 4.2 LinkedList的源码分析：</span></span><br><span class="line">- LinkedList list = new LinkedList(); 内部声明了<span class="keyword">Node</span><span class="title">类型的first</span>和last属性，默认值为null</span><br><span class="line">- list.add(<span class="number">123</span>);//将<span class="number">123</span>封装到<span class="keyword">Node</span><span class="title">中，创建了Node</span>对象。</span><br><span class="line">其中，<span class="keyword">Node</span><span class="title">定义为：体现了LinkedList</span>的双向链表的说法</span><br></pre></td></tr></table></figure>
+<p>private static class Node<E> {<br>  E item;<br>  Node<E> next;<br>   Node<E> prev;</E></E></E></p>
+<pre><code>Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) {
+this.item = element;
+this.next = next;
+this.prev = prev;
+}</code></pre><p>}</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">### 4.3 Vector的源码分析： </span></span><br><span class="line">jdk7和jdk8中通过Vector()构造器创建对象时，底层都创建了长度为10的数组。</span><br><span class="line">在扩容方面，默认扩容为原来的数组长度的2倍。</span><br><span class="line"></span><br><span class="line"><span class="section">## 5. 存储的元素的要求：</span></span><br><span class="line">添加的对象，所在的类要重写equals()方法</span><br><span class="line">[面试题]</span><br><span class="line"><span class="bullet">- </span>面试题：ArrayList、LinkedList、Vector者的异同？</span><br><span class="line">同：三个类都是实现了List接口，存储数据的特点相同：存储序的、可重复的数据      </span><br><span class="line">不同：见上（第3部分+第4部分）</span><br><span class="line"><span class="section"># Collection子接口：Set接口</span></span><br><span class="line"><span class="section">## 1.存储的数据特点：无序的、不可重复的元素</span></span><br><span class="line">具体的：</span><br><span class="line">以HashSet为例说明：</span><br><span class="line"><span class="bullet">- </span>1.无序性：不等于随机性。存储的数据在底层数组中并非照数组索引的顺序添加，而是根据数据的哈希值决定的。</span><br><span class="line"><span class="bullet">- </span>2.不可重复性：保证添加的元素照equals()判断时，不能返回true.即：相同的元素只能添加一个。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="section">## 2.元素添加过程：(以HashSet为例)</span></span><br><span class="line"><span class="bullet">- </span>我们向HashSet中添加元素a,首先调用元素a所在类的hashCode()方法，计算元素a的哈希值，</span><br><span class="line">此哈希值接着通过某种算法计算出在HashSet底层数组中的存放位置（即为：索引位置，判断</span><br><span class="line">数组此位置上是否已经元素：</span><br><span class="line"><span class="bullet">    - </span>如果此位置上没其他元素，则元素a添加成功。 ---&gt;情况1</span><br><span class="line"><span class="bullet">    - </span>如果此位置上其他元素b(或以链表形式存在的多个元素，则比较元素a与元素b的hash值：</span><br><span class="line"><span class="bullet">        - </span>如果hash值不相同，则元素a添加成功。---&gt;情况2</span><br><span class="line"><span class="bullet">        - </span>如果hash值相同，进而需要调用元素a所在类的equals()方法：</span><br><span class="line"><span class="bullet">            - </span>equals()返回true,元素a添加失败</span><br><span class="line"><span class="bullet">            - </span>equals()返回false,则元素a添加成功。---&gt;情况3</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>对于添加成功的情况2和情况3而言：元素a 与已经存在指定索引位置上数据以链表的方式存储。</span><br><span class="line"><span class="bullet">- </span>jdk 7 :元素a放到数组中，指向原来的元素。</span><br><span class="line"><span class="bullet">- </span>jdk 8 :原来的元素在数组中，指向元素a    </span><br><span class="line"><span class="strong">**总结：七上八下**</span></span><br><span class="line"></span><br><span class="line">HashSet底层：数组+链表的结构。（前提：jdk7)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="section">## 3. 常用方法</span></span><br><span class="line">Set接口中没额外定义新的方法，使用的都是Collection中声明过的方法。</span><br><span class="line"><span class="section">## 4. 常用实现类：</span></span><br><span class="line"><span class="bullet">- </span>|----Set接口：存储无序的、不可重复的数据   --&gt;高中讲的“集合”     </span><br><span class="line"><span class="bullet">    - </span>|----HashSet：作为Set接口的主要实现类；线程不安全的；可以存储null值    </span><br><span class="line"><span class="bullet">        - </span>|----LinkedHashSet：作为HashSet的子类；遍历其内部数据时，可以按照添加的顺序遍历</span><br><span class="line"><span class="code">                 在添加数据的同时，每个数据还维护了两个引用，记录此数据前一个数据和后一个数据。                   对于频繁的遍历操作，LinkedHashSet效率高于HashSet.</span></span><br><span class="line"><span class="bullet">    - </span>|----TreeSet：可以照添加对象的指定属性，进行排序。</span><br><span class="line"></span><br><span class="line"><span class="section">## 5. 存储对象所在类的要求：</span></span><br><span class="line"><span class="section">### HashSet/LinkedHashSet:</span></span><br><span class="line"><span class="bullet">- </span>要求：向Set(主要指：HashSet、LinkedHashSet)中添加的数据，其所在的类一定要重写hashCode()和equals()</span><br><span class="line"><span class="bullet">- </span>要求：重写的hashCode()和equals()尽可能保持一致性：相等的对象必须具有相等的散列码</span><br><span class="line">   重写两个方法的小技巧：对象中用作 equals() 方法比较的 Field，都应该用来计算 hashCode 值。</span><br><span class="line"><span class="section">### TreeSet:</span></span><br><span class="line"><span class="bullet">- </span>1.自然排序中，比较两个对象是否相同的标准为：compareTo()返回0.不再是equals().</span><br><span class="line"><span class="bullet">- </span>2.定制排序中，比较两个对象是否相同的标准为：compare()返回0.不再是equals().</span><br><span class="line"></span><br><span class="line"><span class="section">## 6. TreeSet的使用</span></span><br><span class="line"><span class="bullet">- </span>6.1 使用说明:</span><br><span class="line"><span class="bullet">    - </span>1.向TreeSet中添加的数据，要求是相同类的对象。</span><br><span class="line"><span class="bullet">    - </span>2.两种排序方式：自然排序（实现Comparable接口 和 定制排序（Comparator）</span><br><span class="line"><span class="bullet">- </span>6.2 常用的排序方式:</span><br></pre></td></tr></table></figure>
+<p>//方式一：自然排序<br>@Test<br>  public void test1(){</p>
+<pre><code>TreeSet set = new TreeSet();
+
+//失败：不能添加不同类的对象</code></pre><p>//        set.add(123);<br>//        set.add(456);<br>//        set.add(“AA”);<br>//        set.add(new User(“Tom”,12));</p>
+<pre><code>//举例一：</code></pre><p>//        set.add(34);<br>//        set.add(-34);<br>//        set.add(43);<br>//        set.add(11);<br>//        set.add(8);</p>
+<pre><code>//举例二：
+set.add(new User(&quot;Tom&quot;,12));
+set.add(new User(&quot;Jerry&quot;,32));
+set.add(new User(&quot;Jim&quot;,2));
+set.add(new User(&quot;Mike&quot;,65));
+set.add(new User(&quot;Jack&quot;,33));
+set.add(new User(&quot;Jack&quot;,56));</code></pre></li>
+</ul>
+<pre><code>    Iterator iterator = set.iterator();
+    while(iterator.hasNext()){
+        System.out.println(iterator.next());
+    }
+
+}</code></pre><p>//方式二：定制排序<br>    @Test<br>    public void test2(){<br>        Comparator com = new Comparator() {<br>            //照年龄从小到大排列<br>            @Override<br>            public int compare(Object o1, Object o2) {<br>                if(o1 instanceof User &amp;&amp; o2 instanceof User){<br>                    User u1 = (User)o1;<br>                    User u2 = (User)o2;<br>                    return Integer.compare(u1.getAge(),u2.getAge());<br>                }else{<br>                    throw new RuntimeException(“输入的数据类型不匹配”);<br>                }<br>            }<br>        };</p>
+<pre><code>    TreeSet set = new TreeSet(com);
+    set.add(new User(&quot;Tom&quot;,12));
+    set.add(new User(&quot;Jerry&quot;,32));
+    set.add(new User(&quot;Jim&quot;,2));
+    set.add(new User(&quot;Mike&quot;,65));
+    set.add(new User(&quot;Mary&quot;,33));
+    set.add(new User(&quot;Jack&quot;,33));
+    set.add(new User(&quot;Jack&quot;,56));
+
+
+    Iterator iterator = set.iterator();
+    while(iterator.hasNext()){
+        System.out.println(iterator.next());
+    }
+}</code></pre><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 双列集合框架：Map</span></span><br><span class="line"><span class="section">## 1.常用实现类结构</span></span><br><span class="line">![<span class="string">Map</span>](<span class="link">Map.png</span>) </span><br><span class="line"><span class="bullet">- </span>HashMap的底层：      </span><br><span class="line">数组+链表  （jdk7及之前)    </span><br><span class="line">数组+链表+红黑树 （jdk 8)     </span><br><span class="line"><span class="bullet">- </span>面试题</span><br><span class="line"><span class="bullet">* </span>1.HashMap的底层实现原理？</span><br><span class="line"><span class="bullet">* </span>2.HashMap 和 Hashtable的异同？</span><br><span class="line"><span class="bullet">* </span>3.CurrentHashMap 与 Hashtable的异同？</span><br><span class="line"><span class="section">## 2.存储结构的理解：</span></span><br><span class="line"><span class="bullet">- </span>Map中的key:无序的、不可重复的，使用Set存储所的key  ---&gt; key所在的类要重写equals()和hashCode() （以HashMap为例)</span><br><span class="line"><span class="bullet">- </span>Map中的value:无序的、可重复的，使用Collection存储所的value ---&gt;value所在的类要重写equals()</span><br><span class="line"><span class="bullet">-  </span>一个键值对：key-value构成了一个Entry对象。</span><br><span class="line"><span class="bullet">- </span>Map中的entry:无序的、不可重复的，使用Set存储所的entry</span><br><span class="line">![<span class="string">Entry</span>](<span class="link">Entry.png</span>)</span><br><span class="line"><span class="section">## 3.常用方法</span></span><br><span class="line"><span class="bullet">* </span>添加：put(Object key,Object value)</span><br><span class="line"><span class="bullet">* </span>删除：remove(Object key)</span><br><span class="line"><span class="bullet">* </span>修改：put(Object key,Object value)</span><br><span class="line"><span class="bullet">* </span>查询：get(Object key)</span><br><span class="line"><span class="bullet">* </span>长度：size()</span><br><span class="line"><span class="bullet">* </span>遍历：keySet() / values() / entrySet()</span><br><span class="line"><span class="section">## 4. 内存结构说明：（难点）</span></span><br><span class="line"><span class="section">### 4.1 HashMap在jdk7中实现原理：</span></span><br><span class="line">HashMap map = new HashMap():      </span><br><span class="line"><span class="bullet">- </span>在实例化以后，底层创建了长度是16的一维数组Entry[] table。     </span><br><span class="line">...可能已经执行过多次put...</span><br><span class="line">map.put(key1,value1):</span><br><span class="line"><span class="bullet">- </span>首先，调用key1所在类的hashCode()计算key1哈希值，此哈希值经过某种算法计算以后，得到在Entry数组中的存放位置。</span><br><span class="line"><span class="bullet">    - </span>如果此位置上的数据为空，此时的key1-value1添加成功。 ----情况1</span><br><span class="line"><span class="bullet">    - </span>如果此位置上的数据不为空，(意味着此位置上存在一个或多个数据(以链表形式存在)),比较key1和已经存在的一个或多个数据的哈希值：</span><br><span class="line"><span class="bullet">        - </span>如果key1的哈希值与已经存在的数据的哈希值都不相同，此时key1-value1添加成功。----情况2</span><br><span class="line"><span class="bullet">        - </span>如果key1的哈希值和已经存在的某一个数据(key2-value2)的哈希值相同，继续比较：调用key1所在类的equals(key2)方法，比较：</span><br><span class="line"><span class="bullet">            - </span>如果equals()返回false:此时key1-value1添加成功。----情况3</span><br><span class="line"><span class="bullet">            - </span>如果equals()返回true:使用value1替换value2。</span><br><span class="line"><span class="bullet">- </span>补充：关于情况2和情况3：此时key1-value1和原来的数据以链表的方式存储。</span><br><span class="line"><span class="bullet">* </span>在不断的添加过程中，会涉及到扩容问题，当超出临界值(且要存放的位置非空)时，扩容。默认的扩容方式：扩容为原来容量的2倍，并将原的数据复制过来。</span><br><span class="line"><span class="section">### 4.2 HashMap在jdk8中相较于jdk7在底层实现方面的不同：</span></span><br><span class="line"><span class="bullet">- </span>1.new HashMap():底层没创建一个长度为16的数组</span><br><span class="line"><span class="bullet">- </span>2.jdk 8底层的数组是：Node[],而非Entry[]</span><br><span class="line"><span class="bullet">- </span>3.首次调用put()方法时，底层创建长度为16的数组</span><br><span class="line"><span class="bullet">- </span>4.jdk7底层结构只：数组+链表。jdk8中底层结构：数组+链表+红黑树。</span><br><span class="line"><span class="bullet">    - </span>4.1 形成链表时，七上八下（jdk7:新的元素指向旧的元素。jdk8：旧的元素指向新的元素）</span><br><span class="line"><span class="bullet">    - </span>4.2 当数组的某一个索引位置上的元素以链表形式存在的数据个数 &gt; 8 且当前数组的长度 &gt; 64时，此时此索引位置上的所数据改为使用红黑树存储。</span><br><span class="line"><span class="bullet">    - </span>4.3 HashMap底层典型属性的属性的说明：     </span><br><span class="line">DEFAULT<span class="emphasis">_INITIAL_</span>CAPACITY : HashMap的默认容量，16     </span><br><span class="line">DEFAULT<span class="emphasis">_LOAD_</span>FACTOR：HashMap的默认加载因子：0.75      </span><br><span class="line">threshold：扩容的临界值，=容量<span class="emphasis">*填充因子：16 *</span> 0.75 =&gt; 12      </span><br><span class="line">TREEIFY_THRESHOLD：Bucket中链表长度大于该默认值，转化为红黑树:8     </span><br><span class="line">MIN<span class="emphasis">_TREEIFY_</span>CAPACITY：桶中的Node被树化时最小的hash表容量:64     </span><br><span class="line"><span class="bullet">    - </span>4.4 LinkedHashMap的底层实现原理(了解)</span><br><span class="line"><span class="bullet">- </span>LinkedHashMap底层使用的结构与HashMap相同，因为LinkedHashMap继承于HashMap.</span><br><span class="line">区别就在于：LinkedHashMap内部提供了Entry，替换HashMap中的Node.     </span><br><span class="line">![<span class="string">Node</span>](<span class="link">Node.png</span>)</span><br><span class="line"><span class="section">### 5. TreeMap的使用</span></span><br><span class="line"><span class="bullet">- </span>向TreeMap中添加key-value，要求key必须是由同一个类创建的对象</span><br><span class="line"><span class="bullet">- </span>因为要照key进行排序：自然排序 、定制排序</span><br><span class="line"><span class="section">### 6.使用Properties读取配置文件</span></span><br></pre></td></tr></table></figure>
+<p>//Properties:常用来处理配置文件。key和value都是String类型<br>public static void main(String[] args)  {<br>    FileInputStream fis = null;<br>    try {<br>        Properties pros = new Properties();</p>
+<pre><code>    fis = new FileInputStream(&quot;jdbc.properties&quot;);
+    pros.load(fis);//加载流对应的文件
+
+    String name = pros.getProperty(&quot;name&quot;);
+    String password = pros.getProperty(&quot;password&quot;);
+
+    System.out.println(&quot;name = &quot; + name + &quot;, password = &quot; + password);
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    if(fis != null){
+        try {
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}</code></pre><pre><code>
+# Collections工具类
+- 1.作用：操作Collection和Map的工具类
+- 2.常用方法：
+    - reverse(List)：反转 List 中元素的顺序
+    - shuffle(List)：对 List 集合元素进行随机排序
+    - sort(List)：根据元素的自然顺序对指定 List 集合元素升序排序
+    - sort(List，Comparator)：根据指定的 Comparator 产生的顺序对 List 集合元素进行排序
+    - swap(List，int， int)：将指定 list 集合中的 i 处元素和 j 处元素进行交换
+    - Object max(Collection)：根据元素的自然顺序，返回给定集合中的最大元素
+    - Object max(Collection，Comparator)：根据 Comparator 指定的顺序，返回给定集合中的最大元素
+    - Object min(Collection)
+    - Object min(Collection，Comparator)
+    - int frequency(Collection，Object)：返回指定集合中指定元素的出现次数
+    - void copy(List dest,List src)：将src中的内容复制到dest中
+    - boolean replaceAll(List list，Object oldVal，Object newVal)：使用新值替换 List 对象的所旧值      
+![线程安全的方法](线程安全的方法.png)
+- 说明：ArrayList和HashMap都是线程不安全的，如果程序要求线程安全，我们可以将ArrayList、HashMap转换为线程的。
+使用synchronizedList(List list） 和 synchronizedMap(Map map）
+
+
+
+
+
+
+
+
+</code></pre>
       
 
       
@@ -292,6 +476,73 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Collection</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Collections</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">List</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Set</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Map</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ArrayList</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vector</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HashSet</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LinkedHashSet</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">TreeSet</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HashMap</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">TreeMap</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LinkedHashMap</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hashtable</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -385,7 +636,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#集合的概述"><span class="toc-number">1.</span> <span class="toc-text">集合的概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#认识"><span class="toc-number">1.1.</span> <span class="toc-text">认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容"><span class="toc-number">1.2.</span> <span class="toc-text">内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数组与集合"><span class="toc-number">2.</span> <span class="toc-text">数组与集合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Collection接口"><span class="toc-number">3.</span> <span class="toc-text">Collection接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-框架"><span class="toc-number">3.1.</span> <span class="toc-text">1.框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Collection接口常用方法："><span class="toc-number">3.2.</span> <span class="toc-text">2.Collection接口常用方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Collection集合与数组间的转换"><span class="toc-number">3.3.</span> <span class="toc-text">3.Collection集合与数组间的转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使用Collection集合存储对象，要求对象所属的类满足："><span class="toc-number">3.4.</span> <span class="toc-text">4.使用Collection集合存储对象，要求对象所属的类满足：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-本章节要求："><span class="toc-number">3.5.</span> <span class="toc-text">5.本章节要求：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Iterator接口与foreach循环"><span class="toc-number">4.</span> <span class="toc-text">Iterator接口与foreach循环</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Collection子接口：List接口"><span class="toc-number">5.</span> <span class="toc-text">Collection子接口：List接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-存储的数据特点：存储序的、可重复的数据。"><span class="toc-number">5.1.</span> <span class="toc-text">1.存储的数据特点：存储序的、可重复的数据。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-常用方法：-记住"><span class="toc-number">5.2.</span> <span class="toc-text">2.常用方法：(记住)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-常用实现类："><span class="toc-number">5.3.</span> <span class="toc-text">3.常用实现类：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-源码分析-难点"><span class="toc-number">5.4.</span> <span class="toc-text">4.源码分析(难点)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-ArrayList的源码分析："><span class="toc-number">5.4.1.</span> <span class="toc-text">4.1 ArrayList的源码分析：</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -505,14 +756,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">运算符</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java变量</a>
               </li>
              
@@ -521,7 +764,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">运算符</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,6 +785,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">命名规则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,30 +825,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">可变个数的形参</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">static</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">abstract</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">final</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">内部类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,15 +880,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">for循环</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">do while循环</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">static</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">abstract</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">final</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">内部类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -674,6 +925,66 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">throws</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Collection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Collections</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">List</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Set</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Map</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ArrayList</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LinkedList</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vector</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HashSet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LinkedHashSet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TreeSet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HashMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TreeMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LinkedHashMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hashtable</a>
               </li>
              
               <li class="article-tag-list-item">
