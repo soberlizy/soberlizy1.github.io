@@ -15,11 +15,11 @@
 <meta property="og:site_name" content="欢迎来到super king的博客">
 <meta property="og:description" content="程序、进程、线程的理解">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/.com//%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://yoursite.com/.com//jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://yoursite.com/.com//%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
-<meta property="og:image" content="http://yoursite.com/.com//%E9%87%8A%E6%94%BE%E9%94%81%E7%9A%84%E6%93%8D%E4%BD%9C.png">
-<meta property="og:image" content="http://yoursite.com/.com//%E4%B8%8D%E4%BC%9A%E9%87%8A%E6%94%BE%E9%94%81%E7%9A%84%E6%93%8D%E4%BD%9C.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E9%87%8A%E6%94%BE%E9%94%81%E7%9A%84%E6%93%8D%E4%BD%9C.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E4%B8%8D%E4%BC%9A%E9%87%8A%E6%94%BE%E9%94%81%E7%9A%84%E6%93%8D%E4%BD%9C.png">
 <meta property="article:published_time" content="2020-04-29T03:39:18.000Z">
 <meta property="article:modified_time" content="2020-04-29T05:40:45.342Z">
 <meta property="article:author" content="可乐不可乐呀。">
@@ -30,7 +30,7 @@
 <meta property="article:tag" content="线程的同步机制">
 <meta property="article:tag" content="Thread">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/.com//%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到super king的博客" type="application/atom+xml">
   
@@ -270,7 +270,7 @@
 <li>程序<br>概念：是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码。</li>
 <li>进程<br>概念：程序的一次执行过程，或是正在运行的一个程序。<br>说明：进程作为资源分配的单位，系统在运行时会为每个进程分配不同的内存区域</li>
 <li>线程<br>概念：进程可进一步细化为线程，是一个程序内部的一条执行路径。<br>说明：线程作为调度和执行的单位，每个线程拥独立的运行栈和程序计数器(pc)，线程切换的开销小。</li>
-<li>进程与线程<br><img src="/.com//%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png" alt="进程与线程"><br><img src="/.com//jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="jvm内存结构"><br>进程可以细化为多个线程。<br>每个线程，拥有自己独立的：栈、程序计数器<br>多个线程，共享同一个进程中的结构：方法区、堆。      <h1 id="并行与并发"><a href="#并行与并发" class="headerlink" title="并行与并发"></a>并行与并发</h1></li>
+<li>进程与线程<br><img src="/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png" alt="进程与线程"><br><img src="/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="jvm内存结构"><br>进程可以细化为多个线程。<br>每个线程，拥有自己独立的：栈、程序计数器<br>多个线程，共享同一个进程中的结构：方法区、堆。      <h1 id="并行与并发"><a href="#并行与并发" class="headerlink" title="并行与并发"></a>并行与并发</h1></li>
 <li>单核CPU与多核CPU的理解<br>① 单核CPU，其实是一种假的多线程，因为在一个时间单元内，也只能执行一个线程的任务。例如：虽然有多车道，但是收费站只有一个工作人员在收费，只有收了费才能通过，那么CPU就好比收费人员。如果某个人不想交钱，那么收费人员可以把他“挂起”（晾着他，等他想通了，准备好了钱，再去收费。）但是因为CPU时间单元特别短，因此感觉不出来。<br>② 如果是多核的话，才能更好的发挥多线程的效率。（现在的服务器都是多核的）<br>③一个Java应用程序java.exe，其实至少三个线程：main()主线程，gc()垃圾回收线程，异常处理线程。当然如果发生异常，会影响主线程。</li>
 <li>并行与并发的理解<br>① 并行：多个CPU同时执行多个任务。比如：多个人同时做不同的事。<br>②并发：一个CPU(采用时间片)同时执行多个任务。比如：秒杀、多个人做同一件事<h1 id="创建多线程的两种方法"><a href="#创建多线程的两种方法" class="headerlink" title="创建多线程的两种方法"></a>创建多线程的两种方法</h1></li>
 <li>方式一：继承Thread类的方式：    </li>
@@ -326,7 +326,7 @@
 <li><p>线程通信：wait() / notify() / notifyAll() :此三个方法定义在Object类中的。</p>
 </li>
 <li><p>补充：线程的分类<br>一种是守护线程，一种是用户线程。</p>
-<h1 id="Thread的生命周期"><a href="#Thread的生命周期" class="headerlink" title="Thread的生命周期"></a>Thread的生命周期</h1><p><img src="/.com//%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="现成的生命周期">    </p>
+<h1 id="Thread的生命周期"><a href="#Thread的生命周期" class="headerlink" title="Thread的生命周期"></a>Thread的生命周期</h1><p><img src="/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="现成的生命周期">    </p>
 </li>
 </ul>
 <ul>
@@ -406,7 +406,7 @@
 <li>1.相同点：一旦执行方法，都可以使得当前的线程进入阻塞状态。</li>
 <li>2.不同点：1）两个方法声明的位置不同：Thread类中声明sleep() , Object类中声明wait()</li>
 <li>2）调用的要求不同：sleep()可以在任何需要的场景下调用。 wait()必须使用在同步代码块或同步方法中</li>
-<li>3）关于是否释放同步监视器：如果两个方法都使用在同步代码块或同步方法中，sleep()不会释放锁，wait()会释放锁。<h2 id="4-锁的操作："><a href="#4-锁的操作：" class="headerlink" title="4.锁的操作："></a>4.锁的操作：</h2><img src="/.com//%E9%87%8A%E6%94%BE%E9%94%81%E7%9A%84%E6%93%8D%E4%BD%9C.png" alt="释放锁的操作"><br><img src="/.com//%E4%B8%8D%E4%BC%9A%E9%87%8A%E6%94%BE%E9%94%81%E7%9A%84%E6%93%8D%E4%BD%9C.png" alt="不会释放锁的操作"><h1 id="JDK5-0新增线程的创建方方式"><a href="#JDK5-0新增线程的创建方方式" class="headerlink" title="JDK5.0新增线程的创建方方式"></a>JDK5.0新增线程的创建方方式</h1><h2 id="新增方式一：实现Callable接口。-—-JDK-5-0新增"><a href="#新增方式一：实现Callable接口。-—-JDK-5-0新增" class="headerlink" title="新增方式一：实现Callable接口。 — JDK 5.0新增"></a>新增方式一：实现Callable接口。 — JDK 5.0新增</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建一个实现Callable的实现类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumThread</span> <span class="keyword">implements</span> <span class="title">Callable</span></span>&#123;</span><br><span class="line">    <span class="comment">//2.实现call方法，将此线程需要执行的操作声明在call()中</span></span><br><span class="line">    @Override</span><br><span class="line">    <span class="keyword">public</span> Object call() throws Exception &#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">sum</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">                <span class="keyword">sum</span> += i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">sum</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadNew</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="comment">//3.创建Callable接口实现类的对象</span></span><br><span class="line">        NumThread numThread = <span class="keyword">new</span> NumThread();</span><br><span class="line">        <span class="comment">//4.将此Callable接口实现类的对象作为传递到FutureTask构造器中，创建FutureTask的对象</span></span><br><span class="line">        FutureTask futureTask = <span class="keyword">new</span> FutureTask(numThread);</span><br><span class="line">        <span class="comment">//5.将FutureTask的对象作为参数传递到Thread类的构造器中，创建Thread对象，并调用start()</span></span><br><span class="line">        <span class="keyword">new</span> Thread(futureTask).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//6.获取Callable中call方法的返回值</span></span><br><span class="line">            <span class="comment">//get()返回值即为FutureTask构造器参数Callable实现类重写的call()的返回值。</span></span><br><span class="line">            Object <span class="keyword">sum</span> = futureTask.get();</span><br><span class="line">            System.out.println(<span class="string">"总和为："</span> + <span class="keyword">sum</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>3）关于是否释放同步监视器：如果两个方法都使用在同步代码块或同步方法中，sleep()不会释放锁，wait()会释放锁。<h2 id="4-锁的操作："><a href="#4-锁的操作：" class="headerlink" title="4.锁的操作："></a>4.锁的操作：</h2><img src="/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E9%87%8A%E6%94%BE%E9%94%81%E7%9A%84%E6%93%8D%E4%BD%9C.png" alt="释放锁的操作"><br><img src="/2020/04/29/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E4%B8%8D%E4%BC%9A%E9%87%8A%E6%94%BE%E9%94%81%E7%9A%84%E6%93%8D%E4%BD%9C.png" alt="不会释放锁的操作"><h1 id="JDK5-0新增线程的创建方方式"><a href="#JDK5-0新增线程的创建方方式" class="headerlink" title="JDK5.0新增线程的创建方方式"></a>JDK5.0新增线程的创建方方式</h1><h2 id="新增方式一：实现Callable接口。-—-JDK-5-0新增"><a href="#新增方式一：实现Callable接口。-—-JDK-5-0新增" class="headerlink" title="新增方式一：实现Callable接口。 — JDK 5.0新增"></a>新增方式一：实现Callable接口。 — JDK 5.0新增</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建一个实现Callable的实现类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumThread</span> <span class="keyword">implements</span> <span class="title">Callable</span></span>&#123;</span><br><span class="line">    <span class="comment">//2.实现call方法，将此线程需要执行的操作声明在call()中</span></span><br><span class="line">    @Override</span><br><span class="line">    <span class="keyword">public</span> Object call() throws Exception &#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">sum</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">                <span class="keyword">sum</span> += i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">sum</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadNew</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="comment">//3.创建Callable接口实现类的对象</span></span><br><span class="line">        NumThread numThread = <span class="keyword">new</span> NumThread();</span><br><span class="line">        <span class="comment">//4.将此Callable接口实现类的对象作为传递到FutureTask构造器中，创建FutureTask的对象</span></span><br><span class="line">        FutureTask futureTask = <span class="keyword">new</span> FutureTask(numThread);</span><br><span class="line">        <span class="comment">//5.将FutureTask的对象作为参数传递到Thread类的构造器中，创建Thread对象，并调用start()</span></span><br><span class="line">        <span class="keyword">new</span> Thread(futureTask).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//6.获取Callable中call方法的返回值</span></span><br><span class="line">            <span class="comment">//get()返回值即为FutureTask构造器参数Callable实现类重写的call()的返回值。</span></span><br><span class="line">            Object <span class="keyword">sum</span> = futureTask.get();</span><br><span class="line">            System.out.println(<span class="string">"总和为："</span> + <span class="keyword">sum</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <ul>
 <li>说明：<ul>
@@ -738,6 +738,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">运算符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java变量</a>
               </li>
              
@@ -750,19 +758,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">运算符</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Scanner</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">键盘输入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,31 +870,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color5">异常处理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">static</a>
+                <a href="javascript:void(0)" class="js-tag color1">throw</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">abstract</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">final</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">内部类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color2">throws</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -918,15 +906,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异常处理</a>
+                <a href="javascript:void(0)" class="js-tag color2">static</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">throw</a>
+                <a href="javascript:void(0)" class="js-tag color4">abstract</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">throws</a>
+                <a href="javascript:void(0)" class="js-tag color1">final</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">代码块</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">内部类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">枚举类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">enum</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -987,18 +999,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hashtable</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">枚举类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">enum</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
             
             <div class="clearfix"></div>
